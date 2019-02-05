@@ -1,0 +1,90 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+ .example-full-width{
+    width:50%;
+    display: block;
+  
+} 
+.example-full-width{
+  display: block;
+  margin-left: 2%;
+
+}
+#card{
+  width:1000px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  background-color:white;
+
+  
+  box-shadow: 0px 10px 30px  rgb(211,211,211);
+}
+.example-form{
+min-width: 150px;
+max-width: 500;
+width: 100%;
+
+}
+.picker
+{
+
+background-color: red;
+align-self: auto;
+
+width: 300px;
+
+
+}
+
+.mat-datepicker[placeholder] {
+color:red;
+}
+#picker_align{
+
+display: grid;
+grid-template-columns: 48% 48%;
+margin-left: 2%;
+grid-gap: 2%;
+}
+#button_align
+{
+text-align: center;
+background-color: #0b9788;
+padding: 5px;
+}
+
+
+.example-chip-list {
+width: 60%;
+margin-left: 2%;
+}
+
+#small{
+height: 15px;
+width: 15px;
+}
+.example-radio-group {
+display: inline-flex;
+flex-direction: column;
+}
+
+.example-radio-button {
+margin: 5px;
+}
+
+.example-selected-value {
+margin: 15px 0;
+}
+
+#width100{
+width: 100%;
+}

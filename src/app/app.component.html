@@ -1,0 +1,175 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!-- <img src="https://sleepy-savannah-56074.herokuapp.com/api/containers/5c2cbbe5f22f9200046aaf64|logo/download/download.jpg"> -->
+
+
+<mat-toolbar color="primary" class="my_toolbar" >
+
+    <span class="example-spacer"></span>
+
+<mat-toolbar-row>
+    &nbsp;&nbsp;
+    &nbsp;   &nbsp; &nbsp;   &nbsp; &nbsp;   &nbsp; &nbsp;   &nbsp; &nbsp;   &nbsp; &nbsp;   &nbsp; 
+
+  <a  routerLink="" > <span> <img class="logo" src="../assets/logo.png"> </span> </a> 
+  &nbsp;&nbsp;
+  
+<!-- <span class="example-spacer"></span> -->
+
+  <form >
+
+      <mat-form-field class="example-full-width">
+
+        <input type="text" name="searching"   class="my-search" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete class="my-search" #auto="matAutocomplete"
+        
+        
+        placeholder="Search..." >
+          <mat-option *ngFor="let option of filteredOptions | async"  (onSelectionChange)="search(option)" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+    
+
+    </form>
+
+
+
+    &nbsp;&nbsp;  &nbsp;  &nbsp; 
+
+    <a routerLink="Explore" ><button id = "navbtn"  >Explore Companies</button></a>
+
+    
+
+    
+    <!-- <div *ngIf="student">   -->
+
+
+        &nbsp;&nbsp; <h1> | </h1>  &nbsp;  &nbsp; 
+    <a routerLink="shortlist" *ngIf="auth && student" ><button id = "navbtn"  >Shortlist</button></a>
+
+    <a routerLink="shortlist-company" *ngIf="auth && company" ><button id = "navbtn"  >Shortlist</button></a>
+
+    
+    <!-- &nbsp;  &nbsp;  <h1 *ngIf="auth"> | </h1> &nbsp;   &nbsp; -->
+    <!-- </div> -->
+    <!-- &nbsp;&nbsp;  &nbsp;  &nbsp;  -->
+
+
+  <span class="example-spacer"></span>
+  
+  <div *ngIf="company"> 
+     
+    <a routerLink="newdrive" ><button id = "navbtn"  >Post a job </button></a>
+  </div>
+  
+  <div *ngIf="student"> 
+      
+    <a routerLink="Apply-for-company" > <button id = "navbtn"  > Apply for job</button> </a>
+ </div>
+
+
+
+
+  <button id = "navbtn"  *ngIf="!auth" (click)="FillDeatils()">Signup</button>
+  &nbsp; &nbsp;  <h1> | </h1>&nbsp; &nbsp; 
+  <button id = "navbtn"  *ngIf="!auth" (click)="openDialog_login()">Login</button>
+
+  <!-- <button id = "navbtn"  *ngIf="auth" (click)="logout()">Logout</button> -->
+
+  &nbsp;  &nbsp; 
+
+
+  <div *ngIf="student">
+
+      <button id = "navbtn"  >{{ username}} </button>
+     
+    </div>
+    <div *ngIf="student">
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              
+              <a  (click)="my_profile()" > My profile </a>
+            </button>
+            <button mat-menu-item disabled>
+                <a routerLink = "edit-profile" > Edit profile </a>
+            </button>
+            <button mat-menu-item>
+                <a (click)="logout()" > logout </a>
+            </button>
+          </mat-menu>
+    </div>
+    <div *ngIf="company">
+  
+      <button id = "navbtn"  >{{ username}} </button>
+       
+    </div>
+    <div *ngIf="company">
+
+      
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              
+              <a (click)="my_profile_comp()"  > My profile </a>
+            </button>
+            <button mat-menu-item disabled>
+                <a routerLink = "edit-company-profile" > Edit profile </a>
+            </button>
+            <button mat-menu-item>
+                <a (click)="logout()" > logout </a>
+            </button>
+          </mat-menu>
+
+    </div>
+  
+
+</mat-toolbar-row>
+</mat-toolbar>
+
+<br><br><br><br>
+ <!-- {{search_item}} -->
+
+<router-outlet></router-outlet>
+
+
+
+
+
+<app-footer></app-footer>
+
+ 
+<!-- <div *ngIf="student">
+
+  <h1> hay you are studet </h1>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-JTjxB3KZAM0oAZXBf-B4WkiYnDivYBPgEhFOegn5adtfkjhyhg">
+  <h1> id : {{ id }}</h1>
+<h4> userid : {{ access_token}} </h4>
+<h2> name : {{username}} </h2>
+<h2>email: {{ email}} </h2>
+<h2>atuh: {{ auth}} </h2>
+<h2>Role: {{ role}}</h2>
+
+</div>
+<div *ngIf="company">
+
+  <h1> hay you are company  </h1>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkMRg6GeeWlh3-LBMgifD8Xbwgmwox5JujWbQHJVZT7VfRK9geaQ">
+
+  <h1> id : {{ id }}</h1>
+<h4> userid : {{ access_token}} </h4>
+<h2> name : {{username}} </h2>
+<h2>email: {{ email}} </h2>
+<h2>atuh: {{ auth}} </h2>
+<h2>Role: {{ role}}</h2>
+
+</div>  -->
+

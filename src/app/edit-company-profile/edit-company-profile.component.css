@@ -1,0 +1,65 @@
+/* #back{
+    background: black;
+} */
+#company-form{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.width100{
+    width: 100vh;
+}
+.width50{
+    width: 50vh;
+}
+.width75{
+    width: 75vh;
+}
+.header{
+    font-family:georgia,garamond,serif;
+    font-style:italic;
+    font-size: 21px;
+    margin: none;
+}
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+ 
+    font-size: 21px;
+    margin: none;
+}
+#savebtn{
+    display:flex;
+    align: center;
+    width: 70vh;
+    
+}
+#profileimg{
+
+    height: 200px;
+    width: 20vh;
+    margin-top: 10px;
+    padding: 10px;
+}
+#profileimg_cover{
+
+    height: 200px;
+    width: 20vh;
+    margin-top: 10px;
+    padding: 10px;
+}
+#textarea{
+    width: 100vh;
+   
+}
+#textarea1{
+    height: 15vh;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap: 2%;
+}
+#short{
+    height: 20px;
+    width: 20px;
+}

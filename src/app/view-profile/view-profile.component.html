@@ -1,0 +1,33 @@
+
+<div >
+  <div *ngIf="show; else elseBlock">
+  
+  
+    <div align = "center" id ="head">  company profile
+     
+    </div>
+
+
+
+    <div id = "mainHead">
+   <div> <img id="img" src="{{this.image}}" alt=""></div>
+
+
+   <div>
+  <p>{{name}}</p>
+  <p>{{location}}</p>
+  </div>
+  </div>
+
+  
+  
+  </div>
+
+  <ng-template #elseBlock>
+      <div align = "center">candidate profile
+      </div>
+      <div>
+      <img id="img" src="{{this.image}}" alt="">
+      </div>
+  </ng-template>
+</div>

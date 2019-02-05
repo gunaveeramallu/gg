@@ -1,0 +1,341 @@
+<!-- 
+id : {{id}}
+
+json data; 
+
+{{userdata | json }} -->
+
+  
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+
+<div *ngIf="profile_not_exist">
+
+    <h1  align="center" style="color:green" > Update Your Company Profile </h1>
+
+    <div align="center" >
+    <img align="center"  style="width:300px; height:270px "  src="../../assets/profile/update.jpeg" > 
+  
+  
+  
+</div>
+
+</div>
+
+
+<div *ngIf="not_loggedin">
+    <h1 align="center" style="color:#0b9788" > Signin to unlock company profile   </h1>
+
+    <input   id= "submit"  type="Submit"  value="Signin" (click)="login()"  >
+
+
+
+</div>
+
+<!-- {{not_loggedin}} -->
+
+<div *ngIf="profile_exist" >
+
+
+  <span  id = "main1" ></span>
+<div> 
+
+
+
+
+<div class="main1"  >
+ 
+  
+
+<div    class="companyprofile">
+
+    <div   id  = "premain"[style.backgroundImage]="'url('+ company_coverpic +')'">
+      <div id = "main">
+      
+      <div align="middle">
+      <p id = "shadow">Work at {{company_name}} Company</p>
+    </div>
+    <div align="middle">
+      <button class="mainbtn">View openings</button>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    <div class="grid-container" >
+      <div class="grid-item"><img id = "gridimg" src="{{company_image}}"  alt="img"></div>
+      <div class="grid-item">
+        <b>{{company_name}}</b><br>
+        <div id = "sphi"></div>
+      
+      <img class = "mini"src="assets/images/location-sign.png" alt="">
+      {{location}}
+      <img class = "mini"src="assets/images/plant.png" alt="">
+    
+      FOUNDED:{{company_year}}
+      </div>
+      <div class="grid-item">
+      <img class = "mini"src="assets/images/multiple-users-silhouette.png" alt="">
+      &nbsp;
+    
+      {{employes}}   EMPLOYEES<br>
+        <div id = "sphi"></div>
+        <img class = "mini"src="assets/images/brainstorm.png" alt="">
+        &nbsp;
+    
+              {{engineers}} ENGINEERS
+    </div>  
+      <div class="grid-item">
+          <img class = "mini"src="assets/images/price-tag.png" alt="">
+          &nbsp;
+    
+      Market:{{market}}<br>
+        <div id = "sphi"></div>
+        <img class = "mini"src="assets/images/grid-world.png" alt="">
+        &nbsp;
+    
+        <a href="{{homeUrl}}" _blank >Home url</a>
+    
+      
+    </div>
+    </div>
+    <!-- -------------------------------------------------------------------------------------------- -->
+    <div id = "technology">
+      <div id = "edit2">
+       
+        <div align= "center">
+            <button (click)="Funding_Status1()">
+          <img id = "mini" src="assets/images/economic-investment.png" alt="">
+              
+          </button></div>
+        <div align= "center">
+            <button (click)="Benefits1()">
+                <img id = "mini"  src="assets/images/doctor.png" alt="">
+
+
+            </button></div>
+        <div align= "center"> <button (click)="Perks1()">
+            <img id = "mini" src="assets/images/ping-pong.png" alt="">
+          
+          </button>
+        </div>
+        <div align= "center">
+            <!-- <button>
+            Technology Stack
+          </button>   -->
+          
+          </div>
+          <div  align= "center">
+              <!-- <button>
+            Investors
+              </button> -->
+            </div>
+      </div>
+      
+      <div>
+    
+      </div>
+      <div id = "seeTech">
+
+          <div *ngIf="changeGrid == 'Funding_Status'" id = "flex1">
+              &nbsp;
+              &nbsp;
+              <div *ngIf = "Funding_Status[0]"><img id = "mini" src="assets/funding_status/funding1.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[1]"><img id = "mini" src="assets/funding_status/funding2.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[2]"><img id = "mini" src="assets/funding_status/funding3.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[3]"><img id = "mini" src="assets/funding_status/funding4.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[4]"><img id = "mini" src="assets/funding_status/funding5.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[5]"><img id = "mini" src="assets/funding_status/funding6.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[6]"><img id = "mini" src="assets/funding_status/funding7.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[7]"><img id = "mini" src="assets/funding_status/funding8.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Funding_Status[8]"><img id = "mini" src="assets/funding_status/funding9.png" alt="">&nbsp;&nbsp;</div>
+          </div>
+          <div *ngIf="changeGrid == 'Benefits'" id = "flex1">
+              &nbsp;
+              &nbsp;
+              <div *ngIf = "Benefits[0]"><img id = "mini" src="assets/Benefits/benefit1.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[1]"><img id = "mini" src="assets/Benefits/benefit2.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[2]"><img id = "mini" src="assets/Benefits/benefit3.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[3]"><img id = "mini" src="assets/Benefits/benefit4.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[4]"><img id = "mini" src="assets/Benefits/benefit5.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[5]"><img id = "mini" src="assets/Benefits/benefit6.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[6]"><img id = "mini" src="assets/Benefits/benefit7.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[7]"><img id = "mini" src="assets/Benefits/benefit8.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[8]"><img id = "mini" src="assets/Benefits/benefit9.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[9]"><img id = "mini" src="assets/Benefits/benefit10.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[10]"><img id = "mini" src="assets/Benefits/benefit11.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[11]"><img id = "mini" src="assets/Benefits/benefit12.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[12]"><img id = "mini" src="assets/Benefits/benefit13.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[13]"><img id = "mini" src="assets/Benefits/benefit14.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[14]"><img id = "mini" src="assets/Benefits/benefit15.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[15]"><img id = "mini" src="assets/Benefits/benefit16.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[16]"><img id = "mini" src="assets/Benefits/benefit17.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[17]"><img id = "mini" src="assets/Benefits/benefit18.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[18]"><img id = "mini" src="assets/Benefits/benefit19.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "Benefits[19]"><img id = "mini" src="assets/Benefits/benefit20.png" alt="">&nbsp;&nbsp;</div>
+          </div>
+          <div *ngIf="changeGrid == 'Perks'" id = "flex1" >
+            &nbsp;
+              &nbsp;
+              <div *ngIf = "perks[0]"><img id = "mini" src="assets/Perks/perks1.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[1]"><img id = "mini" src="assets/Perks/perks2.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[2]"><img id = "mini" src="assets/Perks/perks3.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[3]"><img id = "mini" src="assets/Perks/perks4.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[4]"><img id = "mini" src="assets/Perks/perks5.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[5]"><img id = "mini" src="assets/Perks/perks6.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[6]"><img id = "mini" src="assets/Perks/perks7.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[7]"><img id = "mini" src="assets/Perks/perks8.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[8]"><img id = "mini" src="assets/Perks/perks9.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[9]"><img id = "mini" src="assets/Perks/perks10.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[10]"><img id = "mini" src="assets/Perks/perks11.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[11]"><img id = "mini" src="assets/Perks/perks12.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[12]"><img id = "mini" src="assets/Perks/perks13.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[13]"><img id = "mini" src="assets/Perks/perks14.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[14]"><img id = "mini" src="assets/Perks/perks15.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[15]"><img id = "mini" src="assets/Perks/perks16.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[16]"><img id = "mini" src="assets/Perks/perks17.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[17]"><img id = "mini" src="assets/Perks/perks18.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[18]"><img id = "mini" src="assets/Perks/perks19.png" alt="">&nbsp;&nbsp;</div>
+              <div *ngIf = "perks[19]"><img id = "mini" src="assets/Perks/perks20.png" alt="">&nbsp;&nbsp;</div>
+          
+          </div>
+    
+      </div>
+    </div>
+    <div></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id = "companystory">
+    <div class="grid-container2">
+      <div>
+        <img id = "icon" src="assets/images/contract.png" alt="">
+        <p>Company</p>
+        <p class= "storytext">{{compDes}}</p>
+    
+    
+      </div>
+      <div>
+          <img id = "icon" src="assets/images/mission.png" alt="">
+          <p>Mission</p>
+        
+        <p class= "storytext">{{compMission}}</p>
+    
+      </div>
+      <div>
+          <img id = "icon" src="assets/images/charity.png" alt="">
+          <p>Values</p>
+    
+          <p class= "storytext">{{compValues}}</p>
+      </div>  
+      </div>
+      
+      <div class="grid-container3">
+      <div>
+          <img id = "icon" src="assets/images/company-workers.png" alt="">
+          <p>Culture</p>
+          <p class= "storytext">{{compCulture}}</p>
+    
+      </div>
+      <div>
+          <img id = "icon" src="assets/images/medal.png" alt="">
+        <p>Market Advantage</p>
+        <p class= "storytext">{{compMkAd}}</p>
+    
+      </div> 
+      </div>
+    </div>
+    
+    
+    
+    <h1 align= "center">Meet the Team</h1>
+    
+    <div id = "flex">
+      <span *ngFor="let item of numbers; let i = index;">
+        
+        <div class="card">
+            <div><p>{{compFounderTitles[i]}}</p> </div>
+            <div><img id = "img1" src="{{compFounderImg[i]}}" alt="img"></div>
+            <div>{{compFounderNames[i]}}</div>
+            <div>{{compFounderUrls[i]}}</div>
+            <div>{{compFounderDes[i]}}</div>
+        </div>
+        
+      </span>
+        </div>
+        
+        <div >
+      <h1 align= "center" >BOARD MEMBERS</h1>
+      <div id = "flex">
+          <span *ngFor="let item of BoradNumber; let i = index;">
+            
+            <div class="card">
+                <div><p>{{compBoardTitles[i]}}</p> </div>
+            <div><img id = "img1" src="{{compBoardImg[i]}}" alt="img"></div>
+                
+                <div>{{compBoardNames[i]}}</div>
+                <div>{{compBoardUrls[i]}}</div>
+                <div></div>
+            </div>
+            
+          </span>
+            </div>
+    
+    </div>
+    
+    <div >
+        <h1 align= "center" >NOTABLE EMPLOYEES</h1>
+        <div id = "flex">
+            <span *ngFor="let item of notableNumber; let i = index;">
+              
+              <div class="card">
+                  <div><p>{{compNotableTitles[i]}}</p> </div>
+                  <div><img id = "img1" src="{{comp_notable_image_list}}" alt="img"></div>
+                  <div>{{compBoardNames[i]}}</div>
+                  <div>{{compNotableUrls[i]}}</div>
+                  <div>{{compNotableDes[i]}}</div>
+                  <div></div>
+              </div>
+              
+            </span>
+              </div>
+      
+      </div>
+      <div >
+          <h1 align= "center" >TESTIMONIALS</h1>
+          <div id = "flex">
+              <span *ngFor="let item of testimonies; let i = index;">
+                
+                <div class="card">
+                    <div><p>{{compTestTitles[i]}}</p> </div>
+                    <div><img id = "img1" src="{{comp_test_image_list[i]}}" alt="img"></div>
+                    <div>{{compTestNames[i]}}</div>
+                    <div>{{compTestTestimonies[i]}}</div>
+                    
+                    <div></div>
+                </div>
+                
+              </span>
+                </div>
+        
+        </div>
+      <br>
+    
+    
+    </div>
+
+</div>
+
+

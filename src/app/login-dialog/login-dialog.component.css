@@ -1,0 +1,490 @@
+input[type=text], input[type=password] {
+  align:center;
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  input[type=text]:placeholder, input[type = password]:placeholder {
+    color: #cccccc;
+  }
+
+
+
+
+  /* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  /* Simple CSS3 Fade-in Animation */
+  @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  
+  .fadeIn {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+  
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+  
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+  }
+  
+  .fadeIn.first {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+  
+  .fadeIn.second {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+  
+  .fadeIn.third {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+  }
+  
+  .fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  
+  /* Simple CSS3 Fade-in Animation */
+  .underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+  }
+  
+  .underlineHover:hover {
+    color: #0d0d0d;
+  }
+  
+  .underlineHover:hover:after{
+    width: 100%;
+  }
+  
+  
+  
+  /* OTHERS */
+  
+  *:focus {
+      outline: none;
+  } 
+  
+  #icon {
+    width:60%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  #red{
+      color:red;
+
+  }
+  #or{
+    align-content: center;
+  }
+
+#logo_center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  width: 80px;
+}
+
+.invalid{
+  animation-name: dir;
+  animation-delay: 0.5;
+ animation-fill-mode: both;
+ animation-iteration-count: infinite;
+ animation-direction: both;
+ 
+}
+
+@keyframes  dir{
+  from { transform: translateX(0px)}
+  to {transform: translateX(10px)}
+}
+
+
+#fh5co-who-we-are {
+  background-image: url("https://img.gitty.ai/media/public/common/gitty-who-we-are-snapshot-min.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  box-shadow: inset 0 0 0 400px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.headers-hr{
+  border-bottom: 12px solid white;
+  background-color: white;
+  color: white;
+  width: 50px;
+  margin-left: 40px;
+}
+
+#fh5co-who-we-are {
+  background-image: url("https://img.gitty.ai/media/public/common/gitty-who-we-are-snapshot-min.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  box-shadow: inset 0 0 0 400px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.who-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: white !important;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+#fh5co-who-we-are .section-text {
+  color: white !important;
+  padding-top: 30px;
+}
+
+.section-text {
+  text-align: left;
+  padding: 0px 40px;
+  font-size: 18px !important;
+  color: black !important;
+}
+
+.who-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: white;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+.our-work-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: black !important;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+.word-image{
+  width: 120%;
+  height: auto;
+  margin: -14% -13%;
+}
+
+.tech-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: black !important;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+.text-title {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-who-we-are .fh5co-lead {
+    font-size: 35px;
+  }
+}
+#fh5co-who-we-are .fh5co-sub-lead {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 300;
+}
+
+#fh5co-our-work {
+  background: #EEEFF3;
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+
+#fh5co-our-work .headers-hr, #fh5co-our-tech .headers-hr {
+  border-bottom: 12px solid black;
+  background-color: black;
+  color: black;
+  width: 50px;
+  margin-left: 40px;
+}
+
+#fh5co-our-work .fh5co-label, #fh5co-our-tech .fh5co-label {
+  display: block;
+}
+#fh5co-our-work .fh5co-lead, #fh5co-our-tech .fh5co-lead{
+  font-size: 50px;
+  font-weight: 300;
+  color: #484c50;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+   .tech-title, .services-title{
+    font-size: 50px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+   .section-text{
+    padding: 0px !important;
+  }
+}
+#fh5co-our-work .fh5co-feature, #fh5co-our-tech .fh5co-feature {
+  clear: both;
+  margin-bottom: 20px;
+  float: left;
+  width: 100%;
+}
+#fh5co-our-work .fh5co-feature .fh5co-icon, #fh5co-our-tech .fh5co-feature .fh5co-icon {
+  float: left;
+  width: 10%;
+}
+#fh5co-our-work .fh5co-feature .fh5co-icon i, #fh5co-our-tech .fh5co-feature .fh5co-icon i {
+  font-size: 40px;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-our-work .fh5co-feature .fh5co-icon i, #fh5co-our-tech .fh5co-feature .fh5co-icon i {
+    font-size: 30px;
+  }
+}
+#fh5co-our-work .fh5co-feature .fh5co-text, #fh5co-our-tech .fh5co-feature .fh5co-text {
+  float: right;
+  width: 85%;
+}
+#fh5co-our-work .fh5co-feature h3, #fh5co-our-tech .fh5co-feature h3 {
+  font-size: 24px;
+  color: #484c50;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+#fh5co-our-work .fh5co-btn-action, #fh5co-our-tech .fh5co-btn-action {
+  width: 100%;
+  float: left;
+}
+#fh5co-our-work .fh5co-btn-action > a, #fh5co-our-tech .fh5co-btn-action > a {
+  margin-left: 15%;
+}
+@media screen and (max-width: 480px) {
+  #fh5co-our-work .fh5co-btn-action > a, #fh5co-our-tech .fh5co-btn-action > a {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width:420px){
+  .title-row{
+    padding-left: 14px!important;
+  }
+}
+
+@media screen and (max-width:320px){
+  .tech-title{
+    padding-left: 0px!important;
+    font-size: 40px!important;
+  }
+}
+
+@media screen and (max-width:375px){
+
+  #fh5co-hero{
+    padding-top: 100px;
+    padding-bottom: 80px;
+    height: 550px;
+  }
+
+  .title {
+    font-size: 3.5em!important;
+  }
+
+  .tech-title{
+    padding-left: 0px!important;
+  }
+
+  #fh5co-our-tech .headers-hr{
+    margin-left: 0px!important;
+  }
+
+  .word-image {
+    width: 157%;
+    margin: -16% -26%;
+  }
+
+  .carouselImg {
+    max-height: 200px!important;
+  }
+}
+
+@media screen and (max-width:414px){
+
+  .word-image {
+    width: 157%;
+    margin: -16% -26%;
+  }
+
+  .carouselImg {
+    max-height: 250px!important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #fh5co-our-work .fh5co-feature-image img, #fh5co-our-tech .fh5co-feature-image img{
+    max-width: 100%;
+  }
+}
+
+#fh5co-screenshots{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#fh5co-screenshots .container {
+  width: 100%;
+  padding: 0px;
+}
+
+.carousel{
+  padding-bottom: 0px;
+}
+
+.carousel-control{
+  margin-top: 50px;
+}
+.carousel-control {
+  background: none !important;
+}
+
+.carouselImg{
+  width: auto;
+  height: 680px;
+  max-height: 680px;
+}
+
+@media screen and (max-width: 480px) {
+  .col-xxs-12 {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .service-icons {
+    width: 20% !important;
+  }
+}
+
+.js .animate-box {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

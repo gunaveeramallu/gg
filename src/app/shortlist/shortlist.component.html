@@ -1,0 +1,93 @@
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+
+
+<div class="card">
+
+  
+<!--   
+    <table align='center' border="1">
+        <thead>
+            <tr>
+              <div >
+                <td>
+                  <tr> -->
+                  <!-- <input type="search" name=search class="search" placeholder="Search for Job Title">
+                  <button class="apply-filters" (click)="search_filter()">Apply Filters</button> -->
+                  &nbsp;&nbsp;
+                  <!-- <mat-form-field>
+                      <mat-select placeholder="Select Filter"  [(ngModel)]="selected_item">
+                        <mat-option  *ngFor="let item of Filter_items" [value]="item">
+                          {{item}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field> -->
+                    <table style="width:100%" align='center' border="1">
+                      <tr class="header">
+                          <th>Company name</th>
+                          <th>Location</th>
+                          <th>Resume link</th>
+                          <th>Date Applied</th>
+                          <!-- <th>Company id</th> -->
+                          <th>Status</th>
+                          <th> Delete my application</th>
+                       </tr> 
+                   
+  
+                       
+                        <tr *ngFor ="let d of result_data;">
+                      
+                          <td align="center"   *ngIf="d.candidate_id == user_id">{{d.comp_name}}</td>
+                          <td  align="center"  *ngIf="d.candidate_id == user_id">{{d.location}}</td>
+                          <td  align="center"  *ngIf="d.candidate_id == user_id"><a href={{d.resume_link}} > My resume </a></td>
+                          <td align="center"    *ngIf="d.candidate_id == user_id">{{d.applied_date}}</td>
+                          <!-- <td   *ngIf="d.candidate_id == user_id">{{d.id}}</td> -->
+                          <td  align="center"  *ngIf="d.candidate_id == user_id">{{d.status}}</td>
+
+                          <td align="center"   *ngIf="d.candidate_id == user_id"><button (click)="delete(d.id)"  ><mat-icon>delete_forever</mat-icon></button></td>
+                          
+                          
+                                                  
+
+                        </tr>
+                        
+                    </table>
+                  <!-- </tr>
+                    <tr class="header">
+                        <th>Company name</th>
+                        <th>Location</t
+                        <th>Resume link</th>
+                        <th>Date Applied</th>
+                        <th>Company id</th>
+                        <th>Status</th>
+                     </tr> 
+                     </td>
+                     </div>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor ="let d of result_data;">
+                        <div *ngIf="d.candidate_id == user_id">
+                        <td>{{d.comp_name}}</td>
+                        <td>{{d.location}}</td>
+                        <td>{{d.resume_link}}</td>
+                        <td>data applied</td>
+                        <td>{{d.id}}</td>
+                        <td>{{d.status}}</td>
+                      </div>
+                      </tr>
+                    </tbody> -->
+                  <!-- </table> -->
+ 
+    </div>
+
+<div>
+
+</div>
+    <!-- {{result_data | json}} -->
+
+    
+    

@@ -1,0 +1,270 @@
+<!-- <router-outlet></router-outlet> -->
+
+<div *ngIf="display">
+<div id="card">
+  <div class="container">
+  <mat-toolbar color="primary">Post Job </mat-toolbar>
+
+    <div *ngIf="success">
+<h1  style="color:green;" align="center" > Job posted Successfully </h1>
+    </div>
+<div *ngIf="!success">
+  <mat-form-field class="example-full-width">
+  <input matInput placeholder="Job Title" [(ngModel)]="job_role" required>
+  </mat-form-field> 
+  <br>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Job-Description" [(ngModel)]="jd" required></textarea>
+</mat-form-field>
+  
+  <br>
+
+<mat-form-field class="example-full-width">
+    <mat-chip-list #chipList>
+      <mat-chip
+        *ngFor="let fruit of fruits"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="remove(fruit)">
+        {{fruit}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        placeholder="Required Skills"
+        #fruitInput
+        [formControl]="fruitCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+         >
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      
+      <mat-option *ngFor="let fruit of filteredFruits | async;let i = index;" [value]="fruit">
+        <img id = "small" src="{{'/assets/tech-'+fruit+'.png'}}" alt="">  
+      
+        {{fruit}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+ 
+
+  <div *ngFor="let fruit of fruits">
+      <img id = "small" src="{{'/assets/tech-'+fruit+'.png'}}" alt="">  
+
+    
+    {{fruit}}
+  
+  </div>
+
+  
+
+
+  <br>
+<div id = "picker_align" >
+    <div>
+        <mat-form-field id = "width100">
+            <mat-select placeholder="Minimum Years of Experience needed" [(ngModel)]="minYeEx">
+              <mat-option value="1-3 Years">1-3 Years</mat-option>
+              <mat-option value="4-6 Years">4-6 Years</mat-option>
+              <mat-option value="7-10 Years">7-10 Years</mat-option>
+              <mat-option value="11-15 Years">11-15 Years</mat-option>
+              <mat-option value="15+ Years">15+ Years</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field id = "width100">
+            <mat-select placeholder="Job Type" [(ngModel)]="jobType">
+              <mat-option value="Full Time">Full Time</mat-option>
+              <mat-option value="Part Time">Part Time</mat-option>
+              <mat-option value="Contract">Contract</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+</div>
+
+<div id = "picker_align">
+    <div>
+        <div>Visa sponsorship</div>
+        <mat-radio-group class="example-radio-group" [(ngModel)]="visaSponsorship">
+            <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+              {{season}}
+            </mat-radio-button>
+          </mat-radio-group>
+          
+          
+    </div>
+    <div>
+            <div>Remote Work</div>
+            <mat-radio-group class="example-radio-group" [(ngModel)]="remoteWork">
+                <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                  {{season}}
+                </mat-radio-button>
+              </mat-radio-group>
+              
+    </div>
+</div>
+  <br>
+
+<div id = "picker_align" >
+<div>
+  <mat-form-field id = "width100">  
+     <input matInput [matDatepicker]="picker" placeholder="Start Date:" [(ngModel)]="startdate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+</div>
+<div>
+  <mat-form-field id = "width100">  
+          <input matInput [matDatepicker]="picker1" placeholder="End Date:" [(ngModel)]="enddate" required>
+           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+           <mat-datepicker #picker1></mat-datepicker>
+       </mat-form-field>
+    </div>
+    </div>
+ 
+ 
+<br>
+<div id="picker_align">
+    <div> 
+        <mat-form-field class="" id = "width100">
+            <input matInput placeholder="Minimum Salary" type="number" [(ngModel)]="minsalary" required>
+            <mat-hint>Enter minimum $ amount</mat-hint>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field id = "width100">
+            <input matInput placeholder="Maximum Salary" type="number" [(ngModel)]="maxsalary" required>
+            <mat-hint>Enter Maximum $ amount</mat-hint>
+       
+        </mat-form-field>
+    </div>
+</div>
+  
+  <br>
+
+  <div id="picker_align">
+    <div> 
+        <mat-form-field class="" id = "width100">
+            <input type="number"
+             matInput placeholder="Minimum Equity " [(ngModel)]="MinEquity" required>
+             <mat-hint>Enter in percentages(%)</mat-hint>
+
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field id = "width100">
+            <input type="number" matInput placeholder="Maximum Equity" [(ngModel)]="MaxEquity" required>
+            <mat-hint>Enter in percentages(%)</mat-hint>
+
+        </mat-form-field>
+    </div>
+</div>
+  <br>
+  <div id="picker_align">
+    <div> 
+        <mat-form-field class="" id = "width100">
+            <input matInput placeholder="Yearly Bonus" [(ngModel)]="yearlyBonus" required>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field id = "width100">
+            <input matInput placeholder="Location" [(ngModel)]="location" required>
+        </mat-form-field> 
+    </div>
+</div>
+  <br>
+  <div id="picker_align">
+    <div> 
+            <mat-form-field id = "width100">
+                    <mat-select placeholder="Department" [(ngModel)]="Department">
+                      <mat-option value="Product ">Product </mat-option>
+                      <mat-option value="Design">Design</mat-option>
+                      <mat-option value="IT">IT</mat-option>
+                      <mat-option value="Engineering">Engineering</mat-option>
+                      <mat-option value="Data Science">Data Science</mat-option>
+                      <mat-option value="Engineering Management">Engineering Management</mat-option>
+
+                    </mat-select>
+                  </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field id = "width100">
+            <input matInput placeholder="Job Owner" [(ngModel)]="JobOwner" required>
+        </mat-form-field> 
+    </div>
+</div>
+  <br>
+  <div align = "center">
+      <div><h4>ROLE RELATED QUESTIONS</h4></div>
+      <div id="picker_align">
+          <div>
+                <div *ngFor="let number of numbers; let i = index ">
+                    
+                        <mat-form-field id= "width100">
+                                <input matInput placeholder="QUESTIONS" [(ngModel)]="QUESTIONS[i]" required>
+                            </mat-form-field>             
+                </div>
+        
+
+          </div>
+          <div>
+              <button (click)= "increase()">+</button>&nbsp;&nbsp;
+              <button (click)= "less()">-</button>
+          </div>
+      </div>
+</div>
+  <br>
+  <img height="420" width="420" src={{imgeurl}}>
+
+  <!-- <p > select image and upload to change the photo </p> -->
+   <!-- {{ imgeurl }} -->
+
+
+<input type="file" (change)="onFileSelected($event)">
+<!-- <input type="button" (click)="uploadImage()" value="Upload image " > -->
+
+<!-- <div>
+    <button (click) = "checking()">
+        checking
+    </button>
+</div> -->
+
+  
+  <div id="button_align">
+  <button mat-raised-button type="submit"   (click)="checking()">Apply for Drive </button>
+</div>
+
+<p align="center" style="color: red"> {{ message }}</p>
+<p align="center" style="color: red"> {{ error_message }}</p>
+
+<br>
+</div>
+</div>
+ 
+</div>
+</div>
+
+<div *ngIf="!display">
+
+        <H1 align="center">         You are not a vallid user ............ sorry :(
+          </H1>
+        
+        </div>
+<!-- <a routerLink="" ><button mat-ra
+    
+    
+    ised-button >Back to Home  </button>  </a> -->
+    <ngx-spinner
+    bdColor = "rgba(51, 51, 51, 0.8)"
+    size = "large"
+    color = "#fff"
+    type = "square-jelly-box"
+    ></ngx-spinner>
+    

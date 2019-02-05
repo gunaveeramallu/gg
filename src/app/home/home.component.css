@@ -1,0 +1,503 @@
+/* -------------------------------------------------------------------------------- image slider  */
+.slider{
+    height: 60%;
+    /* width: 100%; */
+    align-self: auto;
+    align-items: center;
+    align-content: center;
+    padding: 50px;
+    
+    
+  }
+  
+  
+  .transition {
+    transition: all 0.4s ease-in-out;
+  }
+  .carousel .content {
+    display: flex;
+  }
+  .carousel .content .item {
+    width: auto;
+    display: block;
+  }
+  .carousel .content .item .img {
+    width: auto;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    height: 0;
+    padding-bottom: 50%;
+  }
+  .carousel .item {
+    width: auto;
+    display: block;
+  }
+  .carousel .item .img {
+    width: auto;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    height: 0;
+    padding-bottom: 50%;
+  }
+  .carousel .ball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    border: 2px solid;
+    opacity: 0.5;
+  }
+  .carousel .ball.visible {
+    opacity: 1;
+  }
+  .carousel .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: #ff5252;
+  }
+  .carousel .click-area {
+    width: 50px;
+    text-align: center;
+  }
+  .carousel .click-area i {
+    font-size: 3em;
+  }
+  
+  
+  /* ------------------------------ imaeg slider  */
+
+
+ /* grid 1 starts */
+  .title[_ngcontent-c7] {
+    font-size: 4.2em!important;
+    text-align: left;
+    
+    text-transform: none;
+}
+
+.title-hr[_ngcontent-c7] {
+    margin: 0;
+    width: 100%;
+    border-top: 1px solid #9bb1ae;
+    background-color: #9bb1ae;
+    color: #9bb1ae;
+}
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    
+}
+#line{
+margin: 0;
+margin-left: 10vh;
+margin-right: 10vh;
+}
+.fh5co-intro[_ngcontent-c7] h1[_ngcontent-c7] span[_ngcontent-c7] {
+    color: #0b9788;
+    font-family: Raleway,sans-serif;
+}
+h2[_ngcontent-c7] {
+    color: #0b9788!important;
+    font-size: 1.3em!important;
+    text-align: left;
+}
+.fh5co-intro[_ngcontent-c7] h1[_ngcontent-c7] span[_ngcontent-c7] {
+    color: #0b9788;
+    font-family: Raleway,sans-serif;
+}
+#fh5co-hero[_ngcontent-c7] {
+    padding-top: 210px;
+    padding-bottom: 210px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+}
+h1[_ngcontent-c7], h2[_ngcontent-c7], h3[_ngcontent-c7], h4[_ngcontent-c7], h5[_ngcontent-c7], h6[_ngcontent-c7] {
+    color: #484c50;
+    font-family: Raleway,Arial,sans-serif;
+    font-weight: 800;
+    margin: 0 0 30px 0;
+}
+
+
+  
+
+/* grid 2 starts here */
+
+
+
+
+#fh5co-services[_ngcontent-c7] {
+  background: #42484d;
+  padding-bottom: 120px;
+  padding-top: 100px;
+}
+.headers-hr[_ngcontent-c7] {
+  border-bottom: 12px solid #fff;
+  background-color: #fff;
+  color: #fff;
+  width: 50px;
+  margin-left: 40px;
+}
+.services-title[_ngcontent-c7] {
+  font-size: 4.9em!important;
+  font-family: Raleway,sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: #fff;
+  font-weight: 900;
+  padding-left: 40px;
+}
+.services-title[_ngcontent-c7], .tech-title[_ngcontent-c7] {
+  font-size: 50px!important;
+}
+.col-xs-12 {
+  width: 100%;
+}
+.service-row[_ngcontent-c7] {
+  text-align: center;
+  padding-top: 70px;
+}
+.service-icons[_ngcontent-c7] {
+  width: 30%!important;
+}
+.services-text[_ngcontent-c7] {
+  color: #fff;
+  font-size: 16px;
+}
+.col-center[_ngcontent-c7] {
+  display: inline-block;
+  float: none;
+}
+.col-md-2 {
+  width: 16.66666667%;
+}
+.services-text[_ngcontent-c7] {
+  color: #fff;
+  font-size: 18px;
+}
+p {
+  margin: 0 0 10px;
+}
+
+/* grid 2 ends here  */
+ 
+#fh5co-who-we-are {
+  background-image: url("https://img.gitty.ai/media/public/common/gitty-who-we-are-snapshot-min.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  box-shadow: inset 0 0 0 400px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.headers-hr{
+  border-bottom: 12px solid white;
+  background-color: white;
+  color: white;
+  width: 50px;
+  margin-left: 40px;
+}
+
+#fh5co-who-we-are {
+  background-image: url("https://img.gitty.ai/media/public/common/gitty-who-we-are-snapshot-min.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  box-shadow: inset 0 0 0 400px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.who-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: white !important;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+#fh5co-who-we-are .section-text {
+  color: white !important;
+  padding-top: 30px;
+}
+
+.section-text {
+  text-align: left;
+  padding: 0px 40px;
+  font-size: 18px !important;
+  color: black !important;
+}
+
+.who-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: white;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+.our-work-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: black !important;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+.word-image{
+  width: 120%;
+  height: auto;
+  margin: -14% -13%;
+}
+
+.tech-title{
+  font-size: 4.5em !important;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: black !important;
+  font-weight: 900;
+  padding-left: 40px;
+}
+
+.text-title {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-who-we-are .fh5co-lead {
+    font-size: 35px;
+  }
+}
+#fh5co-who-we-are .fh5co-sub-lead {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 300;
+}
+
+#fh5co-our-work {
+  background: #EEEFF3;
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+
+#fh5co-our-work .headers-hr, #fh5co-our-tech .headers-hr {
+  border-bottom: 12px solid black;
+  background-color: black;
+  color: black;
+  width: 50px;
+  margin-left: 40px;
+}
+
+#fh5co-our-work .fh5co-label, #fh5co-our-tech .fh5co-label {
+  display: block;
+}
+#fh5co-our-work .fh5co-lead, #fh5co-our-tech .fh5co-lead{
+  font-size: 50px;
+  font-weight: 300;
+  color: #484c50;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+   .tech-title, .services-title{
+    font-size: 50px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+   .section-text{
+    padding: 0px !important;
+  }
+}
+#fh5co-our-work .fh5co-feature, #fh5co-our-tech .fh5co-feature {
+  clear: both;
+  margin-bottom: 20px;
+  float: left;
+  width: 100%;
+}
+#fh5co-our-work .fh5co-feature .fh5co-icon, #fh5co-our-tech .fh5co-feature .fh5co-icon {
+  float: left;
+  width: 10%;
+}
+#fh5co-our-work .fh5co-feature .fh5co-icon i, #fh5co-our-tech .fh5co-feature .fh5co-icon i {
+  font-size: 40px;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-our-work .fh5co-feature .fh5co-icon i, #fh5co-our-tech .fh5co-feature .fh5co-icon i {
+    font-size: 30px;
+  }
+}
+#fh5co-our-work .fh5co-feature .fh5co-text, #fh5co-our-tech .fh5co-feature .fh5co-text {
+  float: right;
+  width: 85%;
+}
+#fh5co-our-work .fh5co-feature h3, #fh5co-our-tech .fh5co-feature h3 {
+  font-size: 24px;
+  color: #484c50;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+#fh5co-our-work .fh5co-btn-action, #fh5co-our-tech .fh5co-btn-action {
+  width: 100%;
+  float: left;
+}
+#fh5co-our-work .fh5co-btn-action > a, #fh5co-our-tech .fh5co-btn-action > a {
+  margin-left: 15%;
+}
+@media screen and (max-width: 480px) {
+  #fh5co-our-work .fh5co-btn-action > a, #fh5co-our-tech .fh5co-btn-action > a {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width:420px){
+  .title-row{
+    padding-left: 14px!important;
+  }
+}
+
+@media screen and (max-width:320px){
+  .tech-title{
+    padding-left: 0px!important;
+    font-size: 40px!important;
+  }
+}
+
+@media screen and (max-width:375px){
+
+  #fh5co-hero{
+    padding-top: 100px;
+    padding-bottom: 80px;
+    height: 550px;
+  }
+
+  .title {
+    font-size: 3.5em!important;
+  }
+
+  .tech-title{
+    padding-left: 0px!important;
+  }
+
+  #fh5co-our-tech .headers-hr{
+    margin-left: 0px!important;
+  }
+
+  .word-image {
+    width: 157%;
+    margin: -16% -26%;
+  }
+
+  .carouselImg {
+    max-height: 200px!important;
+  }
+}
+
+@media screen and (max-width:414px){
+
+  .word-image {
+    width: 157%;
+    margin: -16% -26%;
+  }
+
+  .carouselImg {
+    max-height: 250px!important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #fh5co-our-work .fh5co-feature-image img, #fh5co-our-tech .fh5co-feature-image img{
+    max-width: 100%;
+  }
+}
+
+#fh5co-screenshots{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#fh5co-screenshots .container {
+  width: 100%;
+  padding: 0px;
+}
+
+.carousel{
+  padding-bottom: 0px;
+}
+
+.carousel-control{
+  margin-top: 50px;
+}
+.carousel-control {
+  background: none !important;
+}
+
+.carouselImg{
+  width: auto;
+  height: 680px;
+  max-height: 680px;
+}
+
+@media screen and (max-width: 480px) {
+  .col-xxs-12 {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .service-icons {
+    width: 20% !important;
+  }
+}
+
+.js .animate-box {
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

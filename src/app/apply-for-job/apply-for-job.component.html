@@ -1,0 +1,56 @@
+
+
+<br><br>
+
+  
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+  
+<div *ngIf="display_ui">
+
+<div *ngFor="let d of run ;let i = index">
+    
+  <div id = "disJob">  
+      <div id = "gridview">
+      <div>
+          <img id = "img" src="{{display[i]['post_job_img']}}" alt="">
+      </div>
+      <div>
+          <div id = "compName">{{display[i]['companyname']}}</div>
+          <div>{{display[i]['job_role']}}</div>
+          <br>
+      <div id = "gird2">
+          <div>Start date: {{display[i]['startdate'] | date}}</div>
+          &nbsp;
+          <div>End date: {{display[i]['startdate']| date}}</div>
+      </div>
+      <div id = "gird2">
+          <div>Minimum Salary: {{display[i]['minsalary']}}</div>
+          &nbsp;
+
+          <div>Maxmimum Salary: {{display[i]['maxsalary']}}</div>
+      </div>
+      </div>
+      <div id = "grid3">
+          <div>
+              <div>
+          <button id = "show" (click) = "showCompany(display[i]['comp_email'])">
+              View Company Deatils
+          </button>
+      </div>
+      <div>
+          <button id = "show" (click) = "showJob(display[i]['comp_email'],display[i]['id'])">
+                  View Job Deatils
+              </button>
+          </div>
+          </div>
+      </div>
+  </div> 
+  </div>
+  <br><br>
+</div>
+</div>

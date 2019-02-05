@@ -1,0 +1,177 @@
+
+
+<h1 align="center" >Candidates shortlist Dashboard</h1>
+
+
+
+
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+
+
+<!--  -->
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button"  class= "btn"  (click)="list_type(1)"  >Waiting list </button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<button type="button"  class= "btn"  (click)="list_type(2)"  >Approved list</button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<button type="button"  class= "btn"  (click)="list_type(3)"  >Rejected list  </button> -->
+
+
+
+<!-- ------------------ ----------waiting ----------------- -->
+
+
+
+
+
+<!-- ------------------ -----waiting-------------------------- -->
+
+
+<!-- ------------------ ----------approved ----------------- -->
+
+
+
+<div id = "gridView" > 
+        <div *ngFor ="let d of result_data">
+    
+    
+            
+      <div id= "stuCard"   >
+          <div align = "center" id = "mar">
+          <img  id = "canImg" src="{{d?.candidate_image}}" alt="">
+      </div>
+      <div align = "center">
+          <div id = "canName" >
+              Name:{{d?.candidate_name}}
+          </div>
+      </div>
+      <div align = "center">
+              <div id = "can_email" >
+                  Email:{{d?.candidate_email}}
+              </div>
+          </div>
+          <!-- <div>
+                  <div id = "can_location">
+                      <img id = "short" src="assets/location-sign.png" alt="">
+                      {{d[i]['candidate_image']}}
+                  </div>
+              </div> -->
+              <div id = "simpleMargin">
+              <!-- <div>
+                      <div id = "can_age">
+                          
+                          {{can_age}}
+                      </div>
+                  </div> -->
+                  <div>
+                          <div id = "can_exprenice">
+                            
+                              {{d?.candidate_exp}}
+                          </div>
+                  </div>
+      
+                  <div>
+                          <div id = "gender">
+                            
+                              {{d?.candidate_gender}}
+                          </div>
+                  </div>
+                  
+                  <div>
+                          <div id = "Latino">
+                            
+                              {{d?.candidate_hispanic_lation}}
+                          </div>
+                  </div>
+      
+      
+                  <div>
+                          <div id = "Veteran">
+                            
+                              {{d?.candidate_veteras_status}}
+                          </div>
+                  </div>
+                  <div>
+                          <div id = "Disability">
+                            
+                              {{d?.candidate_disbility_status}}
+                          </div>
+                  </div>
+              </div>
+      <br>
+      <p align="center" >status : {{d?.status}}</p>
+              <div>
+                  <div>
+                      <button (click)="open_profile(d?.candidate_email)" id = "viewCanProfile">
+                          View Candidate Profile
+                      </button>
+      <br>
+      <br>
+      
+                      <button id = "viewCanResume">
+                         <a href="{{d?.resume_link}}" >  Download Candidate Resume </a>
+                      </button>
+                  </div>
+                  <br>
+                  <div id = "decide">
+                      <button id = "Reject" (click) = "Reject(d?.id)">
+                       Reject
+                      </button>
+                      <button id = "Accpect" (click) ="Accpect(d?.id)" >
+                              Accpect
+                             </button>
+                  </div>
+              </div>
+      
+      </div>
+    </div>
+    
+      
+      </div>
+    
+
+
+
+
+
+<!-- ------------------ -----approved-------------------------- -->
+
+<!-- ------------------ ----------rej ----------------- -->
+
+
+
+
+
+<!-- ------------------ -----rej-------------------------- -->
+
+
+
+
+  
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+
+
+
+    
+
+
+
+
+
+
+

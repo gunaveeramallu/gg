@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Quando);
+*, *:after, *:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+* {margin:0;padding:0;border:0 none;position: relative; outline: none;
+}
+
+
+ a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  visibility: hidden;
+  border-radius: 3px;
+  transform: scaleX(0);
+  transition: .25s linear;
+}
+a:hover:before,
+a:focus:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+/* --------------------------------------------------------------------  onvour effect ------------ */
+.my-search
+{
+
+  float: center;
+  padding: 5px;
+  border: none;
+  /* margin-top: 8px;*/
+  margin-top: 20px; 
+  font-size: 17px;
+  background-color: azure;
+  /* margin-left: 40px;  */
+  
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .my_toolbar {
+   
+      position: fixed;
+      z-index: 2;
+     }
+
+  .search
+  {
+    float: left;
+    padding: 6px;
+    text-align: center;
+    border-radius: 40px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px
+  }
+  
+.logo{
+
+  height: 50px;
+  width: 120px;
+  /* margin: 10px; */
+  margin-top: 10px;
+  padding: 5px;
+  /* width: 20%;
+  height: 10%; */
+  /* background-color: black */
+
+}
+
+
+
+
+/* 
+powered bt ai  */
+.title[_ngcontent-c7] {
+  font-size: 4.2em!important;
+  text-align: left;
+  
+  text-transform: none;
+}
+
+.title-hr[_ngcontent-c7] {
+  margin: 0;
+  width: 100%;
+  border-top: 1px solid #9bb1ae;
+  background-color: #9bb1ae;
+  color: #9bb1ae;
+}
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  
+}
+#line{
+margin: 0;
+margin-left: 10vh;
+margin-right: 10vh;
+}
+.fh5co-intro[_ngcontent-c7] h1[_ngcontent-c7] span[_ngcontent-c7] {
+  color: #0b9788;
+  font-family: Raleway,sans-serif;
+}
+h2[_ngcontent-c7] {
+  color: #0b9788!important;
+  font-size: 1.3em!important;
+  text-align: left;
+}
+.fh5co-intro[_ngcontent-c7] h1[_ngcontent-c7] span[_ngcontent-c7] {
+  color: #0b9788;
+  font-family: Raleway,sans-serif;
+}
+#fh5co-hero[_ngcontent-c7] {
+  padding-top: 210px;
+  padding-bottom: 210px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+}
+h1[_ngcontent-c7], h2[_ngcontent-c7], h3[_ngcontent-c7], h4[_ngcontent-c7], h5[_ngcontent-c7], h6[_ngcontent-c7] {
+  color: #484c50;
+  font-family: Raleway,Arial,sans-serif;
+  font-weight: 800;
+  margin: 0 0 30px 0;
+}
+/* --------------------------------------------------- */
+
+#navbtn{
+  background:none;
+  color:white;
+  border:none; 
+}
+  /* grid 3 starts */

@@ -1,0 +1,24 @@
+
+<div align="center">
+<h1 mat-dialog-title>Accept mode</h1>
+<div mat-dialog-content>
+  <p>Select the Candidate status?</p>
+  
+
+
+    <mat-form-field>
+        <mat-select placeholder="Select Candidate status "  [(ngModel)]="data.animal">
+          <mat-option  *ngFor="let item of items" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    <p>You selected: {{data.animal}}</p>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>
+</div>

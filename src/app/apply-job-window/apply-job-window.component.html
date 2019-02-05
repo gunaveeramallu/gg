@@ -1,0 +1,343 @@
+
+<div *ngIf="error">
+
+  Error occured
+
+</div>
+
+<div *ngIf="resume_not_uploded">
+
+
+  <h1 > experience and reseme not uploaded in your profile  </h1>
+
+</div>
+
+
+
+<div *ngIf="success">
+
+  <h1> successfully added your resume    :)  </h1>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="form">
+  <div *ngIf="company_coverpic">
+<div   id  = "premain"[style.backgroundImage]="'url('+ company_coverpic +')'">
+  <div id = "main">
+    
+      <div align="middle">
+          <p id = "shadow">Work at {{company_name}} Company</p>
+        </div>
+    </div>
+</div>
+</div>
+<div id = "grid">
+  <div></div>
+  <div>
+    <p id ="text">{{jd}}</p>
+  </div>
+  <div></div>
+</div>
+
+<div id = "grid1">
+  <div></div>
+  <div >
+    <div id = "border">
+      <div><b>{{company_name}}</b></div>
+      <div>
+        <img id = "short" src="assets/location-sign.png" alt="">
+        {{location}}</div>
+      <div>
+        <div>
+        <img id = "short" src="assets/plant.png" alt="">
+          
+          Founded:Founded</div>
+
+      </div>
+    </div>
+    <br><br><br>
+    <div>
+        <div id = "application">
+            <div id = "head">
+              APPLICATION
+            </div>
+            <div>
+            <hr>
+            </div>
+            <div id = "sub">
+            
+            U.S. Equal Opportunity Employment Information (Completion is voluntary) Individuals seeking employment are considered without regards to race, color, religion, national origin, age, sex, marital status, ancestry, physical or mental disability, veteran status, gender identity, or sexual orientation. You are being given the opportunity to provide the following information in order to help us comply with federal and state Equal Employment Opportunity/Affirmative Action record keeping, reporting, and other legal requirements.
+            </div>
+            <div id = "span"></div>
+            <div id = "sub">
+                Completion of the form is entirely voluntary. Whatever your decision, it will not be considered in the hiring process or thereafter. Any information that you do provide will be recorded and maintained in a confidential file.
+            
+            </div>
+            <div id = "gender">
+              <div>
+                  <mat-form-field class="gen">
+                      <mat-select  placeholder="Gender" [(value)]="gender">
+                        <mat-option>None</mat-option>
+                        <mat-option value="Male">Male</mat-option>
+                        <mat-option value="Female">Female</mat-option>
+                        <mat-option value="option3">decline to self identify</mat-option>
+                      </mat-select>
+                      <mat-hint>Please select</mat-hint>
+                    </mat-form-field>
+                    
+                
+              </div>
+            
+              <div>
+                  <mat-form-field class="gen">
+                      <mat-select  placeholder="Are you Hispanic/Latino?" [(value)]="Latino">
+                        <mat-option value="yes">yes</mat-option>
+                        <mat-option value="no">no</mat-option>
+                        <mat-option value="I do not wish to answer">I do not wish to answer</mat-option>
+                        
+                      </mat-select>
+                      <mat-hint>Please select</mat-hint>
+            
+                    </mat-form-field>
+            
+              </div>
+            </div>
+            
+            <div id = "sub">
+                if you believe you belong to any of the categories of protected veterans listed below, please indicate by making the appropriate selection. As a government contractor subject to Vietnam Era Veterans Readjustment Assistance Act (VEVRAA), we request this information in order to measure the effectiveness of the outreach and positive recruitment efforts we undertake pursuant to VEVRAA. Classification of protected categories is as follows:
+            </div>
+            <div id = "span1"></div>
+            <div id = "sub">
+                A "disabled veteran" is one of the following: a veteran of the U.S. military, ground, naval or air service who is entitled to compensation (or who but for the receipt of military retired pay would be entitled to compensation) under laws administered by the Secretary of Veterans Affairs; or a person who was discharged or released from active duty because of a service-connected disability.
+            </div>
+            <div id = "span1"></div>
+            <div id = "sub">
+                A "recently separated veteran" means any veteran during the three-year period beginning on the date of such veteran's discharge or release from active duty in the U.S. military, ground, naval, or air service.
+            </div>
+            <div id = "span1"></div>
+            <div id = "sub">
+                An "active duty wartime or campaign badge veteran" means a veteran who served on active duty in the U.S. military, ground, naval or air service during a war, or in a campaign or expedition for which a campaign badge has been authorized under the laws administered by the Department of Defense.
+            </div>
+            <div id = "span1"></div>
+            <div id = "sub">
+                An "Armed forces service medal veteran" means a veteran who, while serving on active duty in the U.S. military, ground, naval or air service, participated in a United States military operation for which an Armed Forces service medal was awarded pursuant to Executive Order 12985.
+            </div>
+            <div>
+                <mat-form-field class="Status">
+                    <mat-select  placeholder="Veteran Status" [(value)]="Veteran">
+                      <mat-option value="I am not a protected veteran">I am not a protected veteran</mat-option>
+                      <mat-option value="i identify as one or more of the classifications of a protected veteran"> i identify as one or more of the classifications of a protected veteran</mat-option>
+                      <mat-option value="i do not wish to answer">I do not wish to answer</mat-option>
+                    </mat-select>
+                    <mat-hint>Please select</mat-hint>
+            
+                  </mat-form-field>
+            </div>
+            <hr>
+            <div id = "sub">
+              <div>
+                  Form CC-305 OMB</div><br>
+              <div>Control Number 1250-0005</div><br>
+              <div>Expires 1/31/2020</div><br>
+            </div>
+            
+            <div align = "center">
+              <b>Voluntary Self-Identification of Disability</b>
+            </div>
+            <div id = "span"></div>
+            
+            <div id = "sub">
+              <div><b>Why are you being asked to complete this form?</b> </div>
+              <div id = "span1"></div>
+            
+            
+              <div>
+                  Because we do business with the government, we must reach out to, hire, and provide equal opportunity to qualified people with disabilities1. To help us measure how well we are doing, we are asking you to tell us if you have a disability or if you ever had a disability. Completing this form is voluntary, but we hope that you will choose to fill it out. If you are applying for a job, any answer you give will be kept private and will not be used against you in any way.
+              </div>
+              <div id = "span1"></div>
+            
+              <div>
+                  If you already work for us, your answer will not be used against you in any way. Because a person may become disabled at any time, we are required to ask all of our employees to update their information every five years. You may voluntarily self-identify as having a disability on this form without fear of any punishment because you did not identify as having a disability earlier.
+              </div>
+              <div id = "span1"></div>
+            
+              <div>
+                <b>
+                    How do I know if I have a disability?
+                </b>
+              </div>
+              <div id = "span1"></div>
+            
+              <div>
+                  You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity, or if you have a history or record of such an impairment or medical condition.
+              </div>
+              <div id = "span1"></div>
+            
+            
+              <div>
+                  Disabilities include, but are not limited to:
+              </div>
+              <div id = "span1"></div>
+            <div>
+              <ul>
+                <li>Blindness</li>
+                <li>Deafness</li>
+                <li>Cancer</li>
+                <li>Diabetes</li>
+                <li>Epilepsy</li>
+                <li>Autism</li>
+                <li>Cerebral Palsy</li>
+                <li>HIV/AIDS</li>
+                <li>Schizophrenia</li>
+                <li>Muscular Dystrophy</li>
+                <li>Bipolar Disorder</li>
+                <li>Major Depression</li>
+                <li>Multiple Sclerosis (MS)</li>
+                <li>Missing Limbs Or Partially Missing Limbs</li>
+                <li>Post-Traumatic Stress Disorder (PTSD)</li>
+                <li>Obsessive Compulsive Disorder</li>
+                <li>Impairments Requiring The Use Of A Wheelchair</li>
+                <li>Intellectual Disability (Previously Called Mental Retardation)</li>
+              </ul>
+            </div>
+            <div id = "span1"></div>
+            
+            </div>
+            <div>
+                <mat-form-field class="Status">
+                    <mat-select  placeholder="Disability Status" [(value)]="Disability">
+                      <mat-option value="yes, i have a disability">yes, i have a disability</mat-option>
+                      <mat-option value="no, i do not have a disability"> no, i do not have a disability</mat-option>
+                      <mat-option value="i do not wish to answer">I do not wish to answer</mat-option>
+                    </mat-select>
+                    <mat-hint>Please select</mat-hint>
+            
+                  </mat-form-field>
+            </div>
+            
+            <div id = "sub">
+              <div>
+                <b>Reasonable Accommodation Notice</b>
+              </div>
+            <div id = "span1"></div>
+            
+              <div>
+                  Federal law requires employers to provide reasonable accommodation to qualified individuals with disabilities. Please tell us if you require a reasonable accommodation to apply for a job or to perform your job. Examples of reasonable accommodation include making a change to the application process or work procedures, providing documents in an alternate format, using a sign language interpreter, or using specialized equipment.
+              </div>
+            <div id = "span1"></div>
+            
+              <div>
+                  1Section 503 of the Rehabilitation Act of 1973, as amended. For more information about this form or the equal employment obligations of Federal contractors, visit the U.S. Department of Labor's Office of Federal Contract Compliance Programs (OFCCP) website at www.dol.gov/ofccp.
+              </div>
+            <div id = "span1"></div>
+            
+              <div>
+                  PUBLIC BURDEN STATEMENT: According to the Paperwork Reduction Act of 1995 no persons are required to respond to a collection of information unless such collection displays a valid OMB control number. This survey should take about 5 minutes to complete.
+              </div>
+            </div>
+            <div align = "center" > <h4> <b>COVER LETTER</b> </h4></div>
+            <hr>
+            <div id = "sub">
+              <b>Attach a Cover letter (Optional)</b>
+            </div>
+            <hr>
+            <div align="center" id = "sub">
+            <button id = "btn" (click)="submitIt()">
+              APPLY NOW
+            </button>
+            <h4 align="center" style="color:red" >{{errormsg }}</h4>
+            </div>
+            </div>
+    </div>
+
+  </div>
+  <div>
+    <div>
+      <div><b>  Department</b></div>
+      <div id = "hei"></div>
+      <div>{{Department}}</div>
+
+      <div id = "hei"></div>
+      <div><b>  Job Type </b></div>
+      <div id = "hei"></div>
+      <div>{{job_role}}</div>
+
+      <!-- <div id = "hei"></div>
+      <div><b>  Department</b></div>
+      <div id = "hei"></div>
+      <div>{{Department}}</div> -->
+
+      <div id = "hei"></div>
+      <div><b>  Skills</b></div>
+      <div id = "hei"></div>
+      <div>
+        <div *ngFor="let skill of siklls"> 
+          <div>{{skill}}</div>
+        </div>
+
+
+      </div>
+
+      <div id = "hei"></div>
+      <div><b>  Remote work</b></div>
+      <div id = "hei"></div>
+      <div>{{remoteWork}}</div>
+
+      <div id = "hei"></div>
+      <div><b>  Max. Salary</b></div>
+      <div id = "hei"></div>
+      <div>{{maxsalary}}$</div>
+
+      <div id = "hei"></div>
+      <div><b>  Min. Salary</b></div>
+      <div id = "hei"></div>
+      <div>{{minsalary}}$</div>
+
+
+
+
+      <div id = "hei"></div>
+      <div><b>  Min. Equity</b></div>
+      <div id = "hei"></div>
+      <div>{{MinEquity}}</div>
+
+      <div id = "hei"></div>
+      <div><b> Yearly Bonus </b></div>
+      <div id = "hei"></div>
+      <div>{{yearlyBonus}}</div>
+
+      
+
+    
+
+
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+
+ 
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+
+
+

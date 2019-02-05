@@ -1,0 +1,71 @@
+
+
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+
+<div *ngIf="form_display">
+
+    <h1 align="center"  style="color:green"> Login successfully...   </h1>
+  
+</div>
+
+<div *ngIf="!form_display" >  
+  <form [formGroup]='signupForm' (ngSubmit)="PostData(signupForm,email.value,password.value)">  
+      <div class="form-container">  
+          <div class="row columns">  
+
+      <div>
+        <div   >
+    
+          <h1 align="center"  style="color:#2ecc71;font-family:georgia,garamond,serif;font-size:24px;font-style:italic;">LogIn  </h1>
+     
+      </div>
+
+      <div *ngIf="signupForm.controls['Emailid'].touched && !signupForm.controls['Emailid'].valid">  
+          <span *ngIf="signupForm.controls['Emailid'].hasError('required') " id="red">  
+            <p align="center"  style="color:red;" >Email ID is needed  </p>
+           
+          </span>  
+         
+        <span *ngIf="signupForm.controls['Emailid'].hasError('email') " id = "red">  
+           <div class="invlid" ><p align="center" style="color:red;" >Invallid Email  </p> </div>
+              </span>  
+      </div>  
+      <p align="center"  style="color:red;" >{{ prompt }}  </p>
+      <p align="center"  style="color:green;" >{{ success }}  </p>
+      <input type="text" #email formControlName='Emailid' name="email"  placeholder="Your Email id"></div>  
+  
+    <br>  
+    <div>  
+    <input type="Password" #password formControlName='userpassword'  name="password" placeholder="Your password">  
+  </div>  
+  <br>  
+  <div>  
+<input  id= "submit" type="Submit"  value={{login}}    >
+
+  </div>  
+
+<p align="center" >Or</p>
+
+  <div>  
+      <input  id= "submitg" type="Submit" value="Sign In with Google"  >  
+        </div> 
+      
+  </div>  
+  <!-- <p align="center" [mat-dialog-close]="data.animal"  style="color:green">New to Gitty? Sign up now </p> -->
+ <div align="center"> <button  mat-button [mat-dialog-close]="data.animal"  style="color:green" cdkFocusInitial>New to Gitty? Sign up now </button>
+     </div>   <p align="center"  style="color:black">Forgot password?</p>
+  </div>  
+  </form>  
+  </div>
+
+ 
+
+
+
+
+    

@@ -1,0 +1,13 @@
+#img{
+    width: 480px;
+    height: 150px;
+    
+    border-radius: 25px;
+}
+#head{
+    font-size: 28px;
+}
+#mainHead{
+    display: grid;
+    grid-template-columns: 30% 70%
+}

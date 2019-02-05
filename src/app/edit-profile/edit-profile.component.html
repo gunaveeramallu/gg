@@ -1,0 +1,394 @@
+  
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+<!-- {{profile_img_url}} -->
+<!-- {{can_name}} -->
+<h1 align="center" style="color:rgb(0, 255, 34)">{{ success }}</h1>
+
+<h1 align="center" style="color:red">{{ errormsg }}</h1>
+
+
+<div id="company-form" *ngIf="form">
+ 
+        <mat-accordion class="example-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                 About me
+                </mat-panel-title>  Basic Details &nbsp;&nbsp;
+                <mat-icon>account_circle</mat-icon>
+              </mat-expansion-panel-header>
+              &nbsp; &nbsp;
+
+
+
+              <!-- upload profile   -->
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title class="header">Profile picture:</mat-card-title>
+                </mat-card-header>
+
+              <mat-card-content>
+                  <img [src]="profile_img_url" *ngIf="profile_img_url" height="200"> <br/>
+                  <input type='file' (change)="onSelectFile_profile($event)">
+              </mat-card-content>
+                <mat-card-actions>
+                        
+                </mat-card-actions>
+              </mat-card>
+              
+
+               <h1 align= "center"> Summary </h1>
+
+              <mat-form-field class="width100">
+                <input matInput  [(ngModel)] ="headline" name="head" placeholder="Headline" required>
+                 </mat-form-field>
+
+                 <mat-form-field class="width100">
+                  <input matInput  [(ngModel)] ="can_name" name="name" placeholder="Candidate name" required>
+                   </mat-form-field>
+
+                   <mat-form-field class="width100">
+                    <input matInput  [(ngModel)] ="can_loc" name="location" placeholder="Candidate location" required>
+                     </mat-form-field>
+              <br>
+              <mat-form-field id = "textarea">
+                    <textarea  matInput  #message [(ngModel)] ="summery" name="summery" maxlength="1800" id = "textarea1"placeholder="Candidate Summary" required></textarea>
+                    <mat-hint align="end">{{message.value.length}} / 1800</mat-hint>   
+                  </mat-form-field>
+                  <br>
+                  
+                  <h1 align= "center">Experience</h1>
+
+                  <mat-form-field class="width50">
+                        <input matInput  [(ngModel)] ="comp_name" name="company_name" placeholder="Company Name" >
+                         </mat-form-field>
+                     &nbsp;
+                      <mat-form-field class="width50">
+                            <input matInput  [(ngModel)] ="job_title" placeholder="Job Title" >
+                             </mat-form-field>
+                          <br>
+                          <mat-form-field class="width50">
+                                <input [(ngModel)] ="start_date_job" matInput [matDatepicker]="picker" placeholder="Start Date">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                       &nbsp;
+                        <mat-form-field class="width50">
+                                <input  [(ngModel)] ="end_date_job"  matInput [matDatepicker]="picker1" placeholder="End Date" >
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                              </mat-form-field>
+
+                              <mat-form-field id = "textarea">
+                                  <textarea  matInput  #message1 [(ngModel)] ="experience_des" maxlength="1800" id = "textarea1"placeholder="Description" >
+
+                                  </textarea>
+                                  <mat-hint align="end">{{message1.value.length}} / 1800</mat-hint>   
+                                </mat-form-field>
+
+
+                              <h1 align= "center">Education</h1>
+                     <mat-form-field class="width50">
+                <input matInput  [(ngModel)] ="inst_name" placeholder="Institution Name" required>
+                    </mat-form-field>
+               &nbsp;
+                <mat-form-field class="width50">
+                  <input matInput  [(ngModel)] ="degree" placeholder="Degree" required>
+                </mat-form-field>
+            <br>  
+            <mat-form-field class="width50">
+                    <input matInput  [(ngModel)] ="field" placeholder="Field of Study" required>           
+                         </mat-form-field>
+              &nbsp;
+                
+
+                <br>
+                <mat-form-field class="width50">
+                    <input [(ngModel)] ="start_date_edu" matInput [matDatepicker]="picker2" placeholder="Start Date" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+          &nbsp;
+            <mat-form-field class="width50">
+                    <input  [(ngModel)] ="end_date_edu"  matInput [matDatepicker]="picker3" placeholder="End Date" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field class="width100">
+                            <textarea matInput  [(ngModel)] ="des_edu" id = "textarea1" placeholder="Description" ></textarea>
+                             </mat-form-field>
+                          <br>
+          
+          
+              <mat-action-row>
+                <button mat-button color="primary" (click)="nextStep()">Next</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+          <!-- -------------------------------------------------------------------------------- -->
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                  General information 
+                </mat-panel-title>
+                <!-- <mat-panel-description>
+                  Candidate Personal details
+                  <mat-icon>assessment</mat-icon>
+                </mat-panel-description> -->
+                Info about Candidate  &nbsp;&nbsp;
+                <mat-icon>assessment</mat-icon>
+                </mat-expansion-panel-header>
+              
+              
+              <!-- ---------------------------------------------------------------- -->
+              
+              <mat-form-field class="width50">
+                <mat-select placeholder="Work status"  [(ngModel)]="work"  required>
+                <mat-option *ngFor="let one of works" [value]="one">
+                  {{one}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+              &nbsp; &nbsp; &nbsp;
+              <mat-form-field class="width50">
+                <mat-select placeholder="USDOD Clearance"  [(ngModel)]="USDOD"  required>
+                <mat-option *ngFor="let one of conditins" [value]="one">
+                  {{one}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+              
+
+              <mat-form-field class="width50" >
+                <input type="number" matInput placeholder="Salary Expectation" [(ngModel)]="sal_exp">
+              </mat-form-field>
+
+              &nbsp; &nbsp; &nbsp;
+              <mat-form-field class="width50">
+                <mat-select placeholder="Currently Interviewing"  [(ngModel)]="interviewing"  required>
+                <mat-option *ngFor="let one of conditins" [value]="one">
+                  {{one}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+              
+              <mat-form-field class="width50">
+                <mat-select placeholder="Need of Sponsorship"  [(ngModel)]="Need_of_Sponsorship"  required>
+                <mat-option *ngFor="let one of conditins" [value]="one">
+                  {{one}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+              &nbsp; &nbsp; &nbsp;
+              <mat-form-field class="width50">
+                <mat-select placeholder="Management Experience"  [(ngModel)]="Management_Experience"  required>
+                <mat-option *ngFor="let one of conditins" [value]="one">
+                  {{one}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field >
+
+              <mat-form-field class="width50">
+                <mat-select placeholder="Start Up Experience"  [(ngModel)]="Start_Up_Experience"  required>
+                <mat-option *ngFor="let one of conditins" [value]="one">
+                  {{one}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+              &nbsp; &nbsp; &nbsp;
+              <mat-form-field class="width50">
+                <mat-select placeholder="Years of Experience"  [(ngModel)]="Years_of_Experience"  required>
+                <mat-option *ngFor="let one of year_exp" [value]="one">
+                  {{one}}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+
+
+
+
+         
+
+              <!-- ---------------------------------------------------------------- -->
+          <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+          </mat-expansion-panel>
+          
+       
+            
+            <!-- -------------------------------------------------------------------------------- -->
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Preferences 
+                    </mat-panel-title>
+                    <!-- <mat-panel-description>
+                      Candidate Personal details
+                      <mat-icon>assessment</mat-icon>
+                    </mat-panel-description> -->
+                    Candidate Preferences  &nbsp;&nbsp;
+                    <mat-icon>assessment</mat-icon>
+                    </mat-expansion-panel-header>
+                  
+                    <!-- --------------------------------------------------------------- -->
+                      
+                    
+
+        <mat-form-field class="width50">
+          <mat-select placeholder="fundingStatus"  [(ngModel)]="funding_Status" multiple="true"  required>
+          <mat-option *ngFor="let one of fundingStatus" [value]="one">
+            {{one}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+        &nbsp; &nbsp; &nbsp;
+        <mat-form-field class="width50">
+          <mat-select placeholder="Job Title"  [(ngModel)]="job_title_selected" multiple="true"  required>
+          <mat-option *ngFor="let one of  job_titles_list" [value]="one">
+            {{one}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field >
+
+    
+
+
+        <mat-form-field class="width50">
+          <mat-select placeholder="Job Types"  [(ngModel)]="job_type_selected" multiple="true"  required>
+          <mat-option *ngFor="let one of  job_types_list" [value]="one">
+            {{one}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+        &nbsp; &nbsp; &nbsp;
+        <mat-form-field class="width50">
+          <mat-select placeholder="Market Options"  [(ngModel)]="market_option_selected" multiple="true"  required>
+          <mat-option *ngFor="let one of  market_options_list" [value]="one">
+            {{one}}
+          </mat-option>
+        </mat-select>
+        </mat-form-field>
+                    <!-- --------------------------------------------------------------- -->
+              <mat-action-row>
+                <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                <button mat-button color="primary" (click)="nextStep()">Next</button>
+              </mat-action-row>
+            </mat-expansion-panel>
+
+          <!-- -------------------------------------------------------------------------------- -->
+          <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Skills 
+                  </mat-panel-title>
+             
+                  <mat-panel-description>
+                             
+                  </mat-panel-description>
+                  process to hire candidates  &nbsp;&nbsp;
+                  <mat-icon>date_range</mat-icon>
+                </mat-expansion-panel-header>
+        <!-- ---------------------------------------------------------- -->
+        <!-- <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+        <app-trail></app-trail> -->
+
+
+                      
+              <mat-form-field class="example-chip-list">
+                <mat-chip-list #chipList>
+                  <mat-chip
+                    *ngFor="let fruit of fruits"
+                    [selectable]="selectable"
+                    [removable]="removable"
+                    (removed)="remove(fruit)">
+                    {{fruit}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input
+                    placeholder="New Skill..."
+                    #fruitInput
+                    [formControl]="fruitCtrl"
+                    [matAutocomplete]="auto"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="add($event)"
+                    
+                    >
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                  
+                  <mat-option *ngFor="let fruit of filteredFruits | async;let i = index;" [value]="fruit">
+                  <!-- <img id = "small" src="{{images[i]}}" alt="">   -->
+                  
+                    {{fruit}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+
+              <!-- <button (click)="checking()">
+                checking
+              </button> -->
+
+              <div *ngFor="let fruit of fruits">
+                  <img id = "small" src="{{'/assets/tech-'+fruit+'.png'}}" alt="">  
+
+                
+                {{fruit}}
+
+              </div>
+
+              <br> <br><hr>
+              <!-- upload resume link  -->
+              <div >
+
+                  <input type='file' value="load resume " (change)="onSelectFile_resume($event)">
+
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  
+                  <input type="button" value="upload resume" (click)="upload_resume()">
+
+              </div>
+              <br>
+
+              <p style="color:green">{{resume_status}}</p>
+
+              <a href={{can_resume_link}}> get your resume from here  </a>
+
+
+
+        <!-- ---------------------------------------------------------- -->
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                  <button mat-button color="primary" (click)="nextStep()">End</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
+          
+        <div align="center" >
+            <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+            <button  (click)="submit()" type="Submit"  id="submit"   >Submit</button>
+
+          </div>
+       
+        </div>
+
+
+        

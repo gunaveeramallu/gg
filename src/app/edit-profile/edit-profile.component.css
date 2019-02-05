@@ -1,0 +1,51 @@
+#company-form{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#savebtn{
+    display:flex;
+    align: center;
+    width: 70vh;
+    
+}
+#profileimg{
+
+    height: 200px;
+    width: 20vh;
+    margin-top: 10px;
+    padding: 10px;
+}
+#profileimg_cover{
+
+    height: 200px;
+    width: 20vh;
+    margin-top: 10px;
+    padding: 10px;
+}
+.width100{
+    width: 100vh;
+}
+.width50{
+    width: 50vh;
+}
+.width75{
+    width: 75vh;
+}
+#textarea{
+    width: 100vh;
+}
+#textarea1{
+    
+    height: 15vh;
+}
+
+/* chips css */
+.example-chip-list {
+    width: 100%;
+  }
+  
+  #small{
+    height: 15px;
+    width: 15px;
+  }

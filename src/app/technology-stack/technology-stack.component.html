@@ -1,0 +1,125 @@
+
+    
+    
+    <div id = "exgrid">
+                <div *ngFor="let one of companies;let i = index;" >
+               
+                               <div id = "exBack">
+                                     <!-- <div>  
+                                   <img id = "eximg" src={{one?.comp_logo}} alt="Avatar" >
+                               </div> -->
+                               <br>
+                               <div id = "main">
+                               <div (mouseenter)="mouse(i)"  (mouseleave) ="mouseLeave(i)" id = "eximg"[style.backgroundImage]="'url('+ one?.comp_logo+')'" >
+                                <div >
+                                        <div  *ngIf="show[i]" id = "mask">
+                                                <button (click)="send_params(one?.comp_email)"  id = "btn" > <b>  Explore</b> </button> 
+                                         </div>
+                               </div>
+                                
+                        
+                        </div>
+                        <div>
+                                
+                                <div id = "gridd">
+                                <div *ngIf = "one?.comp_funding_status[0]"><img id = "mini" src="assets/funding_status/funding1.png" alt=""></div>
+<div *ngIf = "one?.comp_funding_status[1]"><img id = "mini" src="assets/funding_status/funding2.png" alt=""></div>
+<div *ngIf = "one?.comp_funding_status[2]"><img id = "mini" src="assets/funding_status/funding3.png" alt=""></div>
+<div *ngIf = "one?.comp_funding_status[3]"><img id = "mini" src="assets/funding_status/funding4.png" alt=""></div>
+<div *ngIf = "one?.comp_funding_status[4]"><img id = "mini" src="assets/funding_status/funding5.png" alt=""></div>
+<div *ngIf = "one?.comp_funding_status[5]"><img id = "mini" src="assets/funding_status/funding6.png" alt=""></div>
+<div *ngIf = "one?.comp_funding_status[6]"><img id = "mini" src="assets/funding_status/funding7.png" alt=""></div>
+<div *ngIf = "one?.comp_funding_status[7]"><img id = "mini" src="assets/funding_status/funding8.png" alt=""></div>
+</div>
+          
+<div id = "gridd">
+                <div *ngIf = "one?.comp_benefits[0]"><img id = "mini" src="assets/Benefits/benefit1.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[1]"><img id = "mini" src="assets/Benefits/benefit2.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[2]"><img id = "mini" src="assets/Benefits/benefit3.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[3]"><img id = "mini" src="assets/Benefits/benefit4.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[4]"><img id = "mini" src="assets/Benefits/benefit5.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[5]"><img id = "mini" src="assets/Benefits/benefit6.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[6]"><img id = "mini" src="assets/Benefits/benefit7.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[7]"><img id = "mini" src="assets/Benefits/benefit8.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[8]"><img id = "mini" src="assets/Benefits/benefit9.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[9]"><img id = "mini" src="assets/Benefits/benefit10.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[10]"><img id = "mini" src="assets/Benefits/benefit11.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[11]"><img id = "mini" src="assets/Benefits/benefit12.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[12]"><img id = "mini" src="assets/Benefits/benefit13.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[13]"><img id = "mini" src="assets/Benefits/benefit14.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[14]"><img id = "mini" src="assets/Benefits/benefit15.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[15]"><img id = "mini" src="assets/Benefits/benefit16.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[16]"><img id = "mini" src="assets/Benefits/benefit17.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[17]"><img id = "mini" src="assets/Benefits/benefit18.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[18]"><img id = "mini" src="assets/Benefits/benefit19.png" alt=""></div>
+                <div *ngIf = "one?.comp_benefits[19]"><img id = "mini" src="assets/Benefits/benefit20.png" alt=""></div>
+</div>
+
+<div id = "gridd">
+                <div *ngIf = "one?.comp_perks[0]"><img id = "mini" src="assets/Perks/perks1.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[1]"><img id = "mini" src="assets/Perks/perks2.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[2]"><img id = "mini" src="assets/Perks/perks3.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[3]"><img id = "mini" src="assets/Perks/perks4.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[4]"><img id = "mini" src="assets/Perks/perks5.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[5]"><img id = "mini" src="assets/Perks/perks6.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[6]"><img id = "mini" src="assets/Perks/perks7.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[7]"><img id = "mini" src="assets/Perks/perks8.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[8]"><img id = "mini" src="assets/Perks/perks9.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[9]"><img id = "mini" src="assets/Perks/perks10.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[10]"><img id = "mini" src="assets/Perks/perks11.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[11]"><img id = "mini" src="assets/Perks/perks12.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[12]"><img id = "mini" src="assets/Perks/perks13.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[13]"><img id = "mini" src="assets/Perks/perks14.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[14]"><img id = "mini" src="assets/Perks/perks15.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[15]"><img id = "mini" src="assets/Perks/perks16.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[16]"><img id = "mini" src="assets/Perks/perks17.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[17]"><img id = "mini" src="assets/Perks/perks18.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[18]"><img id = "mini" src="assets/Perks/perks19.png" alt=""></div>
+                <div *ngIf = "one?.comp_perks[19]"><img id = "mini" src="assets/Perks/perks20.png" alt=""></div></div>
+
+
+                        </div>
+                      
+                       
+               </div>
+                               
+                       <div class="container">
+                                    <div id = "exCmpName"><b>{{one?.comp_name | uppercase }}</b></div> 
+                                    <div id = "exCmpName1">
+                                                <img id = "short" src="assets/explorer/location1.png.png" alt="">    
+                                       {{one?.comp_hqloc | uppercase }}
+                               </div> 
+                                    <div id = "exCmpName1">
+                                                <img id = "short" src="assets/explorer/plant2.png" alt="">  
+                                       Founded: {{one?.comp_year | uppercase }}
+                               </div> 
+                                    <div id = "exCmpName1">
+                                                <img id = "short" src="assets/explorer/multiple3.png" alt="">  
+                                       {{one?.comp_no_emp| uppercase }} Employees
+               
+                                    </div> 
+                                    <div id = "exCmpName1">
+                                                <img id = "short" src="assets/explorer/brainstorm4.png" alt="">  
+                                       {{one?.comp_no_engg | uppercase }} Engineers
+                               </div> 
+                                    <div id = "exCmpName1">
+                                                <img id = "short" src="assets/explorer/price5.png" alt="">  
+                                             Market:{{one?.comp_market | uppercase }}
+                                       
+                                       </div> 
+               <br>
+                                    
+                                   
+                                    
+                               </div>
+                       </div>
+               </div>
+               </div>
+
+               <ngx-spinner
+               bdColor = "rgba(51, 51, 51, 0.8)"
+               size = "large"
+               color = "#fff"
+               type = "square-jelly-box"
+               ></ngx-spinner>
+               

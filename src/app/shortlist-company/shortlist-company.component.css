@@ -1,0 +1,96 @@
+#gridView{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+#stuCard{
+  margin: 3%;
+  
+  
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+#canImg{
+  width: 112px;
+  height: 112px;
+  border-radius: 25px;
+  
+
+}
+#mar{
+  margin-top: 20px;
+}
+#canName{
+  font-size: 24px;
+margin-top: 5px;
+}
+#can_email{
+  font-size: 18;
+}
+#can_location{
+  margin-left: 15px;
+}
+#short{
+  width:10px;
+  height: 10px;
+}
+#simpleMargin{
+  margin-left: 15px;
+
+
+}
+#viewCanProfile{
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 25px;
+  color: #fff;
+  background: #0B9788;
+  border-radius: 14px;
+
+  
+  width: 96%;
+  
+}
+#viewCanResume{
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 25px;
+  color: #fff;
+  background: #0B9788;
+  border-radius: 14px;
+
+  
+  width: 96%;
+
+}
+#decide{
+  display: grid;
+  grid-template-columns: 48% 48%;
+  grid-gap: 4%;
+  margin-bottom: 30px;
+}
+#Reject{
+  background: none;
+  border: 2px solid red;
+  color: red;
+  margin-left: 15px;
+}
+#Accpect{
+  background: none;
+  border: 2px solid green;
+  color: green;
+  margin-right: 15px;
+
+}
+
+.btn{
+
+  background-color:#0b9788; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

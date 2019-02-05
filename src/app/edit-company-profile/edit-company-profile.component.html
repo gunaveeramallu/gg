@@ -1,0 +1,777 @@
+
+<!-- {{ logo_urli }} cover {{cover_urli}} -->
+<h1 align="center" style="color:green">{{ success }} </h1>
+
+<h1 align="center" style="color:red">{{ errormsg }}</h1>
+
+<p >{{error |json }}</p>
+
+<!-- must fields : comp name | market | year | location -->
+<div id="back">
+<div id="company-form"*ngIf="form" >
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Company Snap shot
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Type your name and job title
+          
+        </mat-panel-description> -->
+        Enter company Snap shot details &nbsp;&nbsp;
+        <mat-icon>photo_camera</mat-icon>
+      </mat-expansion-panel-header>
+      &nbsp; &nbsp;
+      <br>
+      <mat-form-field class="width100">
+        <input matInput  [(ngModel)] ="companyname" id="wid" placeholder="Company name" required>
+
+      </mat-form-field>
+      <br>
+      <!-- upload logo   -->
+
+      <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="header">Company logo:</mat-card-title>
+          </mat-card-header>
+
+        <mat-card-content>
+            <img [src]="logo_url" *ngIf="logo_url" height="200"> <br/>
+            <input type='file' value="load" (change)="onSelectFile_logo($event)">
+            &nbsp; &nbsp; 
+            <input type="button" value="upload" (click)="uploadlogo()">
+        </mat-card-content>
+          <mat-card-actions>
+                 <p style="color:green">{{logo_status}}</p>
+          </mat-card-actions>
+        </mat-card>
+
+        
+        <br>
+        <br>
+        <!-- upload cover pic   -->
+
+      <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="header">Upload company cover image:</mat-card-title>
+          </mat-card-header>
+
+        <mat-card-content>
+            <mat-card-content>
+                <img [src]="cover_url" *ngIf="cover_url" height="200"> <br/>
+                <input type='file' (change)="onSelectFile_cover($event)">
+                &nbsp; &nbsp; 
+                <input type="button" value="upload" (click)="uploadcover()">
+              </mat-card-content>
+              <mat-card-actions>
+              <p style="color:green">{{cover_status}}</p>
+                </mat-card-actions>
+        </mat-card-content>
+          
+        </mat-card>
+  
+  <!-- upload cover pic   -->
+
+  <mat-form-field class="width50">
+  <input matInput  [(ngModel)] ="Company_url" placeholder="Company Url" required>
+  </mat-form-field>
+  &nbsp;&nbsp;
+  <mat-form-field class="width50">
+  <input matInput  [(ngModel)] ="hq_location" placeholder="HQ location" required>
+
+  </mat-form-field>
+<br>
+
+
+
+  <mat-form-field class="width50">
+      <mat-select placeholder="Market"  [(ngModel)]="market"  required>
+      <mat-option *ngFor="let type of industries" [value]="type">
+        {{type}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+&nbsp;
+      <mat-form-field class="width50">
+      <input matInput  type="number" [(ngModel)] ="year" placeholder="year"required>
+    
+      </mat-form-field>
+      <mat-form-field class="width50">
+          <input matInput   [(ngModel)] ="location" placeholder="Company location"required>
+        
+        </mat-form-field>
+  
+&nbsp;
+        <mat-form-field class="width50">
+            <input matInput  type="number" [(ngModel)] ="no_emp" placeholder="Number of Employees" required>
+          
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput  type="number" [(ngModel)] ="no_engg" placeholder="Number of Engineers" required>
+              
+                </mat-form-field>
+          
+      
+  
+  
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  <!-- -------------------------------------------------------------------------------- -->
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Company Details 
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Candidate Personal details
+          <mat-icon>assessment</mat-icon>
+        </mat-panel-description> -->
+        Company full Details &nbsp;&nbsp;
+        <mat-icon>assessment</mat-icon>
+
+      </mat-expansion-panel-header>
+
+
+     <!-- ------------------------------------------------------------------------------- -->
+
+
+     <div>
+      <div>
+        Funding Status
+      </div>
+      
+          <section>
+            <div class="grid">
+              <div >
+                <hr>
+                  <mat-checkbox  [(ngModel)]="Seed" >   <img id = "short" src="assets/funding status/funding1" alt="">
+                
+                    Seed</mat-checkbox><br><hr>
+                  <mat-checkbox  [(ngModel)]="Series_A">
+                      <img id = "short" src="assets/funding status/funding2" alt="">
+                    Series A</mat-checkbox><br><hr>
+                  <mat-checkbox  [(ngModel)]="Series_B">
+                      <img id = "short" src="assets/funding status/funding3" alt="">
+                    Series B</mat-checkbox><br><hr>
+                  <mat-checkbox  [(ngModel)]="Series_C">
+                      <img id = "short" src="assets/funding status/funding4" alt="">
+                    Series C</mat-checkbox><hr>
+              </div>
+              <div>
+                <hr>
+                  <mat-checkbox  [(ngModel)]="Series_D">
+                      <img id = "short" src="assets/funding status/funding5" alt="">
+                    Series D+</mat-checkbox><br><hr>
+            <mat-checkbox  [(ngModel)]="Publicly_Traded">
+                <img id = "short" src="assets/funding status/funding6" alt="">
+              Publicly Traded</mat-checkbox><br><hr>
+            <mat-checkbox  [(ngModel)]="Other">
+                <img id = "short" src="assets/funding status/funding7" alt="">
+              Other</mat-checkbox><br><hr>
+            <mat-checkbox  [(ngModel)]="ICO">
+                <img id = "short" src="assets/funding status/funding8" alt="">
+              ICO</mat-checkbox><hr>
+              </div>
+           
+        
+      
+          </div>
+          </section>
+          <div>
+              Benefits
+            </div>
+            
+                <section>
+                  <div class="grid">
+                    <div >
+                      <hr>
+                      <mat-checkbox  [(ngModel)]="Flexible_Spending_Account">
+                    <img id = "short" src="assets/Benefits/benefit1.png" alt="">
+                        
+                        Flexible Spending Account (FSA)</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="HealthSavingsAccount">
+          <img id = "short" src="assets/Benefits/benefit2.png" alt="">
+       
+        Health Savings Account (HSA)</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="MentalHealthCare">
+          <img id = "short" src="assets/Benefits/benefit3.png" alt="">
+        
+        Mental Health Care</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="RetireeHealthMedical">
+          <img id = "short" src="assets/Benefits/benefit4.png" alt="">
+
+          Retiree Health & Medical</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="HealthCareOnSite">
+          <img id = "short" src="assets/Benefits/benefit5.png" alt="">
+        
+        Health Care On-Site</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="PensionPlan">
+          <img id = "short" src="assets/Benefits/benefit6.png" alt="">
+        
+        Pension Plan</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="RetirementPlan">
+          <img id = "short" src="assets/Benefits/benefit7.png" alt="">
+        
+        Retirement Plan</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="Plan">
+          <img id = "short" src="assets/Benefits/benefit8.png" alt="">
+        
+        401(K) Plan</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="EquityIncentivePlan">
+          <img id = "short" src="assets/Benefits/benefit9.png" alt="">
+        
+        Equity Incentive Plan</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="EmployeeStockPurchasePlan">
+          <img id = "short" src="assets/Benefits/benefit10.png" alt="">
+        
+        Employee Stock Purchase Plan</mat-checkbox><br><hr>
+                      
+                    </div>
+                    <div>
+                      <hr>
+                      <mat-checkbox  [(ngModel)]="StockOptions">
+                    <img id = "short" src="assets/Benefits/benefit11.png" alt="">
+                        
+                        Stock Options</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="PerformanceBonus">
+          <img id = "short" src="assets/Benefits/benefit12.png" alt="">
+        
+        Performance Bonus</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="PaidSickLeave">
+        
+          <img id = "short" src="assets/Benefits/benefit13.png" alt="">
+          Paid Sick Leave</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="PaidVacationTime">
+          <img id = "short" src="assets/Benefits/benefit14.png" alt="">
+        
+        Paid Vacation Time</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="CompetitiveSalaries">
+          <img id = "short" src="assets/Benefits/benefit15.png" alt="">
+        
+        Competitive Salaries</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="HealthInsurance">
+          <img id = "short" src="assets/Benefits/benefit16.png" alt="">
+        
+        Health Insurance</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="LifeInsurance">
+          <img id = "short" src="assets/Benefits/benefit17.png" alt="">
+        
+        Life Insurance</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="DentalInsurance">
+          <img id = "short" src="assets/Benefits/benefit18.png" alt="">
+        
+        Dental Insurance</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="VisionInsurance">
+          <img id = "short" src="assets/Benefits/benefit19.png" alt="">
+        
+        Vision Insurance</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="DisabilityInsurance">
+          <img id = "short" src="assets/Benefits/benefit20.png" alt="">
+        
+        Disability Insurance</mat-checkbox><br><hr>
+                    
+                    </div>
+                 
+              
+            
+                </div>
+                </section>
+                <div>
+                    Perks
+                  </div>
+      
+                <section>
+                    <div class="grid">
+                      <div >
+                        <hr>
+                        <mat-checkbox  [(ngModel)]="PingPong">
+                            <img id = "short" src="assets/Perks/perks1.png" alt="">
+                          Ping-Pong</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="BeerOnTap">
+          <img id = "short" src="assets/Perks/perks2.png" alt="">
+        Beer On Tap</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="Arcade">
+          <img id = "short" src="assets/Perks/perks3.png" alt="">
+        Arcade</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="Yoga">
+          <img id = "short" src="assets/Perks/perks4.png" alt="">
+        Yoga</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="CityViews">
+          <img id = "short" src="assets/Perks/perks5.png" alt="">
+        City Views</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="FreeParking">
+          <img id = "short" src="assets/Perks/perks6.png" alt="">
+          Free Parking</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="SpaPasses">
+          <img id = "short" src="assets/Perks/perks7.png" alt="">
+        Spa Passes</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="Childcare">
+          <img id = "short" src="assets/Perks/perks8.png" alt="">
+        Childcare</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="AutoCare">
+          <img id = "short" src="assets/Perks/perks9.png" alt="">
+        Auto Care</mat-checkbox><br><hr>
+      <mat-checkbox  [(ngModel)]="CasualDress">
+          <img id = "short" src="assets/Perks/perks10.png" alt="">
+        Casual Dress</mat-checkbox><br><hr>
+                       </div>
+                      <div>
+                        <hr>
+                        <mat-checkbox  [(ngModel)]="RemoteWorkDays">
+                            <img id = "short" src="assets/Perks/perks11.png" alt="">
+                          Remote Work Days</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="CompanySwag">
+                            <img id = "short" src="assets/Perks/perks12.png" alt="">
+                          Company Swag</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="CompanyPhone">
+                            <img id = "short" src="assets/Perks/perks13.png" alt="">
+                          Company Phone</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="CompanyCar">
+                            <img id = "short" src="assets/Perks/perks14.png" alt="">
+                          Company Car</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="CompanyLaptop">
+                            <img id = "short" src="assets/Perks/perks15.png" alt="">
+                          Company Laptop</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="AppleEquipment">
+                            <img id = "short" src="assets/Perks/perks16.png" alt="">
+                          Apple Equipment</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="GymMembership">
+                            <img id = "short" src="assets/Perks/perks17.png" alt="">
+                          Gym Membership</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="FitnessCenterOnSite">
+                            <img id = "short" src="assets/Perks/perks18.png" alt="">
+                          Fitness Center On-Site</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="CateredFood">
+                            <img id = "short" src="assets/Perks/perks19.png" alt="">
+                          Catered Food</mat-checkbox><br><hr>
+                        <mat-checkbox  [(ngModel)]="CompanyEvents">
+                            <img id = "short" src="assets/Perks/perks20.png" alt="">
+                          Company Events</mat-checkbox><br><hr>
+                      
+                        
+                      </div>
+                   
+                
+              
+                  </div>
+                  </section>
+                </div>
+
+
+
+
+     <!-- ------------------------------------------------------------------------------- -->
+  
+      
+  
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <!-- -------------------------------------------------------------------------------- -->
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            Company story
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+              Candidate Personal details
+              <mat-icon>assessment</mat-icon>
+            </mat-panel-description> -->
+            History of the Company   &nbsp;&nbsp;
+            <mat-icon>assessment</mat-icon>
+    
+          </mat-expansion-panel-header>
+          <mat-form-field id="textarea" >
+              <textarea matInput #Company_Description maxlength="400" placeholder="Company Description" id="textarea1" [(ngModel)]="company_des" required></textarea>
+              <mat-hint align="end">{{Company_Description.value.length}} / 400</mat-hint>
+            </mat-form-field>
+        
+          <br>
+        <mat-form-field id="textarea"  >
+            <textarea matInput #Company_Mission placeholder="Company Mission" maxlength="400" id="textarea1"  [(ngModel)]="company_mission" required></textarea>
+            <mat-hint align="end">{{Company_Mission.value.length}} / 400</mat-hint>
+        </mat-form-field>
+      
+        <br>
+        <mat-form-field id="textarea" >
+            <textarea matInput #Company_values placeholder="Company values" maxlength="400" id="textarea1"  [(ngModel)]="company_value"></textarea>
+            <mat-hint align="end">{{Company_values.value.length}} / 400</mat-hint>
+        
+          </mat-form-field>
+     
+        <br>
+        <mat-form-field id="textarea"  >
+            <textarea matInput #Company_Culture placeholder="Company Culture" maxlength="400" id="textarea1"   [(ngModel)]="company_culture"></textarea>
+            <mat-hint align="end">{{Company_Culture.value.length}} / 400</mat-hint>
+        
+          </mat-form-field>
+
+       
+        <br>
+        <mat-form-field id="textarea" >
+            <textarea matInput #Marke_Advantage placeholder="Market Advantage" maxlength="400" id="textarea1"  [(ngModel)]="Advantage"></textarea>
+            <mat-hint align="end">{{Marke_Advantage.value.length}} / 400</mat-hint>
+        
+          </mat-form-field>
+    
+        <br>
+        <br>
+        <mat-form-field class="lastname" id="textarea">
+            <input matInput placeholder="Company video"  [(ngModel)]="youtube">
+            <mat-hint align="start"><strong>URL from youtube</strong> </mat-hint>
+        </mat-form-field>
+
+
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <!-- -------------------------------------------------------------------------------- -->
+
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          Team & Testimonials
+          </mat-panel-title>
+          <!-- Login information -->
+          <!-- <mat-icon>date_range</mat-icon> -->
+
+          <mat-panel-description>
+           
+
+           
+          </mat-panel-description>
+          <!-- <p *ngIf="password1 == password2" >information to identify you </p> -->
+          Company founders&nbsp;&nbsp;
+          <mat-icon>laptop_chromebook</mat-icon>
+        </mat-expansion-panel-header>
+
+        <h1 align="center">Company founder</h1>
+
+        <h6 align="center"> Count: {{count}}   </h6>
+
+        
+
+
+        <span *ngFor="let item of arrayOne(element); let i = index;">
+    
+          
+          
+          <h4 align="center">Company founder: {{i+1}}/{{count}}</h4>
+
+          <mat-form-field class="width50">
+              <input matInput  [(ngModel)] ="founder_title[i]"  placeholder="Founding Member's Title">
+            </mat-form-field>
+            &nbsp;
+        <mat-form-field class="width50">
+          <input matInput  [(ngModel)] ="founder_name[i]"  placeholder="Founding Member's Name">
+        </mat-form-field>
+        
+        <!-- <mat-form-field class="width50">
+            <input matInput  [(ngModel)] ="founder_title[i]"  placeholder="Founding Member's Title">
+          </mat-form-field> -->
+          <br>
+        <mat-form-field class="width50">
+          <input matInput  [(ngModel)] ="founder_memb_url[i]"  placeholder="Founding Member's URL">
+        </mat-form-field>
+       &nbsp;
+        <mat-form-field  class="width50">
+            <input matInput  [(ngModel)] ="founder_des[i]"  placeholder="Founding Member's Description">
+          </mat-form-field>
+
+          <!-- -------------------------- image upload -------------------->
+
+          
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="header">Upload Founder{{i+1}} image:</mat-card-title>
+          </mat-card-header>
+
+        <mat-card-content>
+            <img [src]="founder_img_url[i]" *ngIf="founder_img_url[i]" height="200"> <br/>
+            <input type='file' value="load" (change)="onSelectFile_founder($event,i)">
+            <input type="button" value="upload" (click)="uploadfounder(i)">
+
+        </mat-card-content>
+          <mat-card-actions>
+              <p style="color:green">{{founder_status[i]}}</p>
+           </mat-card-actions>
+        </mat-card>
+
+        <!-- -------------------------- image upload -------------------->
+        <hr>
+        <br>
+        </span>
+        
+
+        <div align="center" >
+          <button (click)="add()">+</button>
+          &nbsp;
+          <button *ngIf="count>0" (click)="sub()">-</button>
+        </div>
+          <br>
+          <hr>
+
+         <h1 align="center"> BOARD MEMBERS  </h1>
+
+         <h6 align="center"> Count: {{count1}}  </h6>
+
+         <span *ngFor="let item of arrayOne1(element); let j = index;">
+
+            <h4 align="center">Board Member: {{j+1}} / {{count1}}</h4>
+
+         <mat-form-field class= "width50">
+            <input matInput  [(ngModel)] ="Board_member[j]"  placeholder="Board Member's Name">
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field class= "width50">
+              <input matInput  [(ngModel)] ="Board_member_title[j]"  placeholder="Board Member's Title">
+            </mat-form-field>
+            <br>
+            <mat-form-field class= "width50">
+                <input matInput  [(ngModel)] ="Board_member_url[j]"  placeholder="Board Member's URL (from youtube)">
+
+              </mat-form-field>
+        <!-- -------------------------- image upload -------------------->
+
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="header">Board member{{j+1}} image:</mat-card-title>
+          </mat-card-header>
+
+        <mat-card-content>
+            <img [src]="board_img_url[j]" *ngIf="board_img_url[j]" height="200"> <br/>
+            <input type='file' value="load" (change)="onSelectFile_board_mem($event,j)">
+            <input type="button" value="upload" (click)="uploadboardmem(j)">
+
+        </mat-card-content>
+          <mat-card-actions>
+              <p style="color:green">{{board_status[j]}}</p>
+          </mat-card-actions>
+        </mat-card>
+
+        <!-- -------------------------- image upload -------------------->
+        <hr>
+        <br> <br>
+              </span>
+              <div align="center" >
+                <button (click)="add1()">+</button>
+                &nbsp;
+                <button *ngIf="count1>0" (click)="sub1()">-</button>
+              </div>
+              <br>
+              <hr>
+          <h1 align="center">NOTABLE EMPLOYEES</h1>
+          <h6 align="center"> Count: {{count2}}  </h6>
+
+          <span *ngFor="let item of arrayOne2(element); let k = index;">
+
+              <h4 align="center">Notable Employees: {{k+1}} / {{count2}}</h4>
+
+          <mat-form-field class= "width50">
+              <input matInput  [(ngModel)] ="emp_name[k]"  placeholder="Employees's Name">
+            </mat-form-field>
+           &nbsp;
+            <mat-form-field class= "width50">
+                <input matInput  [(ngModel)] ="emp_title[k]"  placeholder="Employee's Title">
+              </mat-form-field>
+              <br>
+              <mat-form-field class= "width50">
+                  <input matInput  [(ngModel)] ="emp_url[k]"  placeholder="Employee's URL (from youtube) ">
+  
+                </mat-form-field>
+              &nbsp;
+                <mat-form-field class= "width50">
+                    <textarea matInput  [(ngModel)] ="emp_des[k]"  placeholder="Employee's Description"></textarea>
+    
+                  </mat-form-field>
+                  <!-- -------------------------- image upload -------------------->
+
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title class="header">Notable employe{{k+1}} image:</mat-card-title>
+          </mat-card-header>
+
+        <mat-card-content>
+            <img [src]="notable_emp_img_url[k]" *ngIf="notable_emp_img_url[k]" height="200"> <br/>
+            <input type='file' value="load" (change)="onSelectFile_notable_emp($event,k)">
+            <input type="button" value="upload" (click)="uploadnotable(k)">
+
+        </mat-card-content>
+          <mat-card-actions>
+              <p style="color:green">{{notable_status[k]}}</p>
+
+          </mat-card-actions>
+        </mat-card>
+
+        <!-- -------------------------- image upload -------------------->
+        <hr>
+        <br> <br>
+                </span>
+                <div align="center" >
+                  <button (click)="add2()">+</button>
+                  &nbsp;
+                  <button *ngIf="count2>0"  (click)="sub2()">-</button>
+                </div>
+                <br>
+                <hr>
+
+                  <h1 align="center"> TESTIMONIALS</h1>
+                  <h6 align="center"> Count: {{count3}}  </h6>
+
+          <span *ngFor="let item of arrayOne3(element); let m = index;">
+
+              <h4 align="center">Testimoniale: {{m+1}} / {{count3}}</h4>
+
+              <mat-form-field class= "width50">
+          <input matInput  [(ngModel)] ="t_name[m]"  placeholder="Name">
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field class= "width50">
+            <input matInput  [(ngModel)] ="t_title[m]"  placeholder="Position Title">
+          </mat-form-field>
+          <br>
+          <mat-form-field class= "width50">
+              <input matInput  [(ngModel)] ="t_url[m]"  placeholder="profile url">
+
+            </mat-form-field>
+           &nbsp;
+            <mat-form-field class= "width50"> 
+                <input matInput  [(ngModel)] ="t_Testimony[m]"  placeholder="Testimony">
+
+              </mat-form-field>
+            <!-- -------------------------- image upload -------------------->
+
+             <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title class="header">Testimoniale{{m+1}} image:</mat-card-title>
+              </mat-card-header>
+    
+           <mat-card-content>
+                <img [src]="testimoniale_img_url[m]" *ngIf="testimoniale_img_url[m]" height="200"> <br/>
+                <input type='file' value="load" (change)="onSelectFile_testimoniale($event,m)">
+                <input type="button" value="upload" (click)="uploadtest(m)">
+
+            </mat-card-content>
+              <mat-card-actions>
+                  <p style="color:green">{{test_staus[m]}}</p>
+              </mat-card-actions>
+            </mat-card> 
+    
+            <!-- -------------------------- image upload -------------------->
+            <hr>
+            <br> <br> 
+            </span>
+            <div align="center" >
+              <button (click)="add3()">+</button>
+              &nbsp;
+              <button *ngIf="count3>0" (click)="sub3()">-</button>
+            </div>
+
+            <hr> 
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+      <!-- -------------------------------------------------------------------------------- -->
+  <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+      <mat-expansion-panel-header >
+          <mat-panel-title>
+            InterView process
+          </mat-panel-title>
+
+     
+          <mat-panel-description>
+                     
+          </mat-panel-description>
+          process to hire candidates  &nbsp;&nbsp;
+          <mat-icon>date_range</mat-icon>
+        </mat-expansion-panel-header>
+        <div align="center" >
+        <mat-form-field  class="width75" >
+            <mat-select placeholder="Estimated duration"  [(ngModel)]="InterView_duration"  required>
+            <mat-option *ngFor="let one of weeks" [value]="one">
+              {{one}}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+        </div>
+
+          <!-- step 1 ------------------ -->
+          <span *ngFor="let item of arrayOne4(element); let n = index;">
+          <h6 align="center" >Round {{i+1}} </h6>
+          <div align="center">
+          <mat-form-field class="width75" >
+              <mat-select placeholder="Round type"   [(ngModel)]="round_type[n]"  required>
+              <mat-option *ngFor="let round of rounds" [value]="round">
+                {{round}}
+              </mat-option>
+            </mat-select>
+            </mat-form-field>
+&nbsp;
+<br>
+           
+        <mat-form-field class="width75" >
+            <textarea matInput placeholder="Description" [(ngModel)]="round_type_des[n]"></textarea>
+        </mat-form-field>
+      </div>
+        <!-- <p style="color:grey">Max Characters: 255</p> -->
+<hr> 
+          <!-- step 1 ------------------ -->
+          <!-- <h1> + Add Step </h1> -->
+
+
+</span>
+<div align="center" >
+  <button (click)="add4()">+</button>
+  &nbsp;
+  <button *ngIf="count4>0" (click)="sub4()">-</button>
+</div>
+<hr>
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="nextStep()">End</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  
+<div    >
+   
+    <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+    <button type="button"  id= "submit"  (click)="submit()"  >Submit</button>
+  </div>
+</div>
+</div>
+
+<!-- <h1>logo</h1>
+<br>
+<img [src]="logo_urli" >
+<h1>cover</h1>
+<br>
+<img [src]="cover_urli"> -->
+
+<!-- founder : {{founder }}
+founder des : {{founder_des}} -->
+
+<!-- {{error | json}} -->
+
+
+
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+

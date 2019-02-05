@@ -1,0 +1,96 @@
+#premain{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  #main{
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(34, 128, 76, 0.2);
+    align-content: center;
+  
+  
+  
+  }
+    #shadow{
+    display: inline;
+    text-shadow: 1px 1px #b2beb5;
+    font-size: 24px;
+  
+  }
+  #grid{
+      display:grid;
+      grid-template-columns: 30% 40% 30%;
+      
+  }
+  #text{
+    color: rgb(179, 178, 178);
+  }
+  #grid1{
+      display: grid;
+      grid-template-columns: 7% 63% 30%;
+  }
+  #short{
+      width: 10px;
+      height: 10px;
+  }
+  #border{
+      border-left: 4px solid #0B9788;
+      padding-left: 20px;
+      padding-top: 3px;
+  }
+  #hei{
+      height: 4px;
+  }
+  #application{
+   margin-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+#head{
+    text-align: center;
+}
+hr{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-top: 1px solid #ccc;
+}
+#sub{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #333333;
+    
+}
+#span{
+    height: 30px;
+}
+#gender{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.gen{
+    width: 95%;
+    margin-right: 20px;
+}
+#span1{
+    height: 10px;
+}
+.Status{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+}
+#btn{
+    width: 108px;
+    height: 25px;
+    color: #fff;
+    background: #0B9788;
+    border-radius: 14px;
+}
+#btn:hover{
+    background: black;   
+}

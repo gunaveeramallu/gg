@@ -1,0 +1,278 @@
+<div mat-dialog-content>
+   
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>Welcome to Gitty </span>
+    </mat-toolbar-row>
+    </mat-toolbar>
+  
+
+  <!-- <p>What's your favorite animal?</p> -->
+  <!-- <mat-form-field>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field> -->
+
+  <mat-form-field  >
+    <mat-select placeholder="Select type"  [(ngModel)]="Usertype" >
+      <mat-option *ngFor="let type of items" [value]="type.value">
+        {{type.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- #############################################STUDENT ######################################## -->
+
+  <div *ngIf="Usertype === student" >
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and job title
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p *ngIf="!firstname_student" style="color:red;" > *Required</p>
+      &nbsp; &nbsp;
+
+      <mat-form-field>
+        <input matInput  [(ngModel)] ="firstname" placeholder="First name">
+
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="test" [(ngModel)] ="job"  placeholder="Job title">
+
+      </mat-form-field>
+  
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  <!-- -------------------------------------------------------------------------------- -->
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Details
+        </mat-panel-title>
+        <mat-panel-description>
+          Candidate Personal details
+          <mat-icon>assessment</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+
+        <p *ngIf="!ssc" style="color:red;" >*Required</p>
+        <mat-form-field>
+          <input matInput type="email" [(ngModel)] ="email"  placeholder="Email">
+        </mat-form-field>
+
+        <!-- <p *ngIf="!inter" style="color:red;" >*Required</p> -->
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)] ="Github"  placeholder="Github profile">
+          </mat-form-field>
+    
+
+  
+      
+  
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  
+    <!-- <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Login informationn
+        </mat-panel-title>
+        <mat-panel-description>
+          information to identify you 
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel> -->
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Login information
+          </mat-panel-title>
+          <mat-panel-description>
+            <p *ngIf="password1 == password2" >information to identify you </p>
+            <p *ngIf="password1 != password2" style="color:red;" >*Both passwords are not same</p>
+
+            <mat-icon>date_range</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <p *ngIf="!Login_id" style="color:red;" >*Required</p>
+        <mat-form-field>
+          <input matInput type="email" [(ngModel)] ="Login_id"  placeholder="Login ID">
+        </mat-form-field>
+        <br>
+
+        <p *ngIf="!password1" style="color:red;" >*Required</p>
+        <mat-form-field>
+          <input matInput type="password" [(ngModel)] ="password1"  placeholder="password">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" [(ngModel)] ="password2"  placeholder="Re-Enter your password">
+        </mat-form-field>
+
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="nextStep()">End</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+  
+  </mat-accordion>
+  
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  </div>
+  
+</div>
+  <!-- #############################################STUDENT ######################################## -->
+  <!-- #############################################COMPANY ######################################## -->
+  <div *ngIf="Usertype === company" >
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Company information
+            </mat-panel-title>
+            <mat-panel-description>
+              Type your company name and location
+              <mat-icon>my_location</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <p *ngIf="!firstname" style="color:red;" >*Required</p>
+          <mat-form-field>
+            <input matInput  [(ngModel)] ="companyname" placeholder="Company name">
+          </mat-form-field>
+          <br>
+          <p  >Which departments are you looking to hire            </p>
+    
+          
+          <mat-radio-group>
+              <mat-radio-button value="1">Product</mat-radio-button>
+              &nbsp; &nbsp;
+              <mat-radio-button value="2">Design</mat-radio-button>
+              &nbsp; &nbsp;
+              <mat-radio-button value="3">Engineering</mat-radio-button>
+              &nbsp; &nbsp;
+              <mat-radio-button value="4">IT</mat-radio-button>
+              &nbsp; &nbsp;
+              <mat-radio-button value="5">Data Science</mat-radio-button>
+              &nbsp; &nbsp;
+              <mat-radio-button value="6">Engineering Management</mat-radio-button>
+          </mat-radio-group>
+
+      
+          <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Hiring
+            </mat-panel-title>
+            <mat-panel-description>
+              Additional information 
+              <mat-icon>accessibility</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+    
+    
+            <p *ngIf="!ssc" style="color:red;" >*Required</p>
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)] ="company_name" min="1" placeholder="your name">
+            </mat-form-field>
+            <br>
+            <p *ngIf="!inter" style="color:red;" >*Required</p>
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)] ="job_required" min="1" placeholder="Job Required">
+              </mat-form-field>
+        
+    
+      
+          
+      
+          <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Login informationn
+            </mat-panel-title>
+            <mat-panel-description>
+              information to identify you 
+              <mat-icon>date_range</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+
+          <p *ngIf="!Login_id" style="color:red;" >*Required</p>
+          <mat-form-field>
+            <input matInput type="email" [(ngModel)] ="Login_id"  placeholder="Login ID">
+          </mat-form-field>
+          <br>
+  
+          <p *ngIf="!password1" style="color:red;" >*Required</p>
+          <mat-form-field>
+            <input matInput type="password" [(ngModel)] ="password1"  placeholder="password">
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput type="password" [(ngModel)] ="password2"  placeholder="Re-Enter your password">
+          </mat-form-field>
+  
+
+          <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">End</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      
+      </mat-accordion>
+      
+      <div mat-dialog-actions>
+          <button mat-button (click)="onNoClick()">No Thanks</button>
+          <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+          </div>
+          
+    </div>
+    
+
+
+  <!-- #############################################COMPANY ######################################## -->
+
+  <!-- #############################################COMPANY ######################################## -->
+  <div *ngIf="Usertype === guest" >
+    <h1> No guest login availabe sorry.... :( </h1>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Ok</button>
+      </div>
+</div>
+
+  <!-- #############################################COMPANY ######################################## -->
+
+
+

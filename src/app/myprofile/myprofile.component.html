@@ -1,0 +1,288 @@
+<!-- 
+id : {{id}}
+
+json data; 
+
+{{userdata | json }} -->
+
+  
+<ngx-spinner
+bdColor = "rgba(51, 51, 51, 0.8)"
+size = "large"
+color = "#fff"
+type = "square-jelly-box"
+></ngx-spinner>
+
+<div *ngIf="!profile_exist">
+
+
+  <h1  align="center" style="color:green" > Update Your Profile </h1>
+
+  <div align="center" >
+  <img align="center"  style="width:300px; height:270px "  src="../../assets/profile/update.jpeg" > 
+
+</div>
+
+</div>
+
+<div *ngIf="profile_exist" id = "grey">
+  <span  id = "main"></span>
+<div> 
+<div class="main" data-aos="fade-up" >
+  <div id = "can_img"><img id = "img"  src="{{can_profile_pic}}" alt="">
+    
+    
+  </div>
+  <div>
+    <p id = "can_name" >{{can_name}}</p>
+    <div id = "fle">
+      <div >
+    <img id = "min" src="assets/images/location-sign.png" alt="">
+  </div>
+    <div id ="can_loc" > {{can_loc}}
+        <div id = "can_headline">{{can_headline}}</div>
+    </div>
+  </div>
+  </div>
+
+
+</div>
+
+</div>
+<span></span>
+<span  id = "main"></span>
+<div class="grid2">
+  <div id = "aboutMe">
+    <h1 align = "center">About Me</h1>
+    <div  id = "can_summery" align = "center">
+    <p>{{can_summery}}</p>
+  </div>
+  </div>
+  <div id = "information">
+      <h1 align = "center">Information</h1>
+      <div id = "subGrid2">
+        <div>
+          <div id = "flexGrid">
+            <div align = "center">
+              
+              <img id = "side" src="assets/images/can1.png" alt="">
+
+            </div>
+            <div>
+                WORK STATUS:
+                <br>{{can_work_status}}
+            </div>
+            
+          </div>
+          <br>
+          <div id = "flexGrid">
+            <div align = "center">
+                <img id = "side" src="assets/images/can2.png" alt="">
+
+            </div>
+            <div>
+                SALARY EXPECTATION:<br> 
+                {{can_sal_expection}}
+            </div>
+            <br>
+            
+
+          </div>
+          <div id = "flexGrid">
+            <div align = "center">
+                <img id = "side" src="assets/images/can3.png" alt="">
+
+            </div>
+            <div>
+                CURRENTLY INTERVIEWING: <br>
+                {{can_currently_interviewing}}
+            </div>
+            
+<br>
+          </div>
+          <div id = "flexGrid">
+              <div align = "center">
+                  <img id = "side" src="assets/images/can4.png" alt="">
+  
+              </div>
+            <div>
+                STARTUP EXPERINCE:
+                <br>
+                {{can_startup_exp}}
+            </div>
+         
+          </div>
+        </div>
+        <div>
+          <div id = "flexGrid">
+              <div align = "center">
+                  <img id = "side" src="assets/images/can5.png" alt="">
+  
+              </div>
+            <div>
+                DOD CLEARANCE:
+                <br>
+                {{can_usdod}}
+            </div>
+<br>
+          </div>
+          <div id = "flexGrid">
+              <div align = "center">
+                  <img id = "side" src="assets/images/can6.png" alt="">
+  
+              </div>
+            <div>
+                NEED SPONSORSHIP:
+                <br>
+                {{can_need_of_sponsorship}}
+            </div>
+           <br>
+
+          </div>
+          <div id = "flexGrid">
+
+              <div align = "center">
+                  <img id = "side" src="assets/images/can7.png" alt="">
+  
+              </div>
+            <div>
+                MANAGEMENT XP:
+                <br>  
+                {{can_management_experiece}}
+            </div>
+ <br>
+          </div>
+          <div id = "flexGrid">
+         
+              <div align = "center">
+                  <img id = "side" src="assets/images/can8.png" alt="">
+  
+              </div>
+            <div>
+                YEARS OF EXPERIENCE:
+                <br>
+                {{can_year_of_experience}}
+            </div>
+           <br>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<span  id = "main"></span>
+<div id = "grid3">
+  <div id = "scale">
+    <h1 align = "center">SKILLS</h1>
+    <div *ngFor="let skill of can_skills">
+      <div id = "can_edu_degree">
+{{skill}}
+      </div>
+    </div>
+    
+  </div>
+  <div style = "background: white"> 
+    <h1 align = "center">preferences</h1>
+    <div id = "subGrid3">
+      <div id = "preGrid">
+        <div>
+            
+
+        </div>
+        
+        <div id = "preHead">company</div>
+        <div  id = "presub">
+            {{can_ex_comp_name}}
+        </div>
+        
+        
+
+      </div>
+      <div id = "preGrid">
+        <div></div>
+        <div id = "preHead">
+          <div>Job-Types</div></div>
+        <div id = "presub">{{can_job_types}}</div>
+        
+        
+
+      </div>
+      <div id = "preGrid">
+        <div></div>
+        <div id = "preHead">MARKETS</div>
+        <div  id = "presub">{{can_market_options}}</div>
+        
+        
+
+      </div>
+      <div id = "preGrid">
+        <div></div>
+        <div id = "preHead">TITLES</div>
+        <div   id = "presub">{{can_job_title}}</div>
+        
+        
+      </div>
+      <div>
+        <!-- LOCATIONS:
+        {{}} -->
+      </div>
+
+    </div>
+    <div  id = "preGrid">
+        <div> </div>
+        <div id = "preHead"> LOCATIONS</div>
+        <div   id = "presub">
+          No preferences
+        </div>
+          <!-- LOCATIONS:
+          {{}} -->
+        </div>
+  </div>
+
+</div>
+<span  id = "main"></span>
+<div id  = "testing">
+  <div>
+    <div id = "workex">
+{{can_name}} WORK EXPERIENCE
+</div>
+<div id = "can_edu_degree">
+   Work EXPERIENCE {{can_management_experiece}}
+    </div>
+    <div id = "can_edu_degree">
+      Years of EXPERINCE: {{can_year_of_experience}}
+    </div>
+  </div>
+  <div>
+    <div  id = "workex1">
+      {{can_name}} EDUCATION
+     
+    </div>
+    <div> 
+        <div *ngIf = "can_edu_inst_name" id = "can_edu_inst_name" >{{can_edu_inst_name}}</div>
+      <div id = 'can_edu_degree'>
+         Degree: {{can_edu_degree}}
+      </div>
+      <div id = "can_edu_degree">
+        Field Of Study: {{can_edu_field_of_study}}
+      </div>
+      <div>
+        <div id = "can_edu_degree">
+           Start Date: {{can_edu_start_date | date}}
+        </div>
+        <div id = "can_edu_degree">
+          End Date:{{can_edu_end_date | date}}</div>
+      </div>
+      
+      
+        
+        </div>
+    </div>
+   
+</div>
+
+<div>
+ 
+</div>
+</div>
+
+
